@@ -3,429 +3,639 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Portfolio of Sourabh Kumar - Software Engineer"
-    />
-    <title>Sourabh Kumar | Portfolio</title>
-
+    <title>Sourabh Kumar - Portfolio</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
   </head>
   <body>
-    <!-- Navbar Section -->
-    <nav class="navbar">
-      <div class="container nav-flex">
-        <a href="#" class="logo">Sourabh Kumar</a>
+    <div class="title-bar">
+      <div class="title-bar-left">
+        <i class="fas fa-code vscode-icon"></i>
 
-        <div class="hamburger" id="hamburger">
+        <div class="mobile-menu-btn" onclick="toggleSidebarUI()">
           <i class="fas fa-bars"></i>
         </div>
 
-        <ul class="nav-links" id="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#achievements">Achievements</a></li>
-          <li><a href="#contact">Contact</a></li>
+        <span class="menu-item">File</span>
+        <span class="menu-item">Edit</span>
+        <span class="menu-item">Selection</span>
+        <span class="menu-item">View</span>
+        <span class="menu-item">Go</span>
+        <span class="menu-item">Run</span>
+        <span class="menu-item"><i class="fas fa-ellipsis-h"></i></span>
+      </div>
+
+      <div class="title-bar-center">
+        <div class="nav-arrows">
+          <i class="fas fa-arrow-left nav-arrow"></i>
+          <i class="fas fa-arrow-right nav-arrow"></i>
+        </div>
+        <div class="search-bar">
+          <i class="fas fa-search search-icon"></i>
+          <span>Sourabh Kumar Portfolio</span>
+        </div>
+      </div>
+
+      <div class="title-bar-right">
+        <div class="layout-controls">
+          <i class="fas fa-columns layout-icon" title="Toggle Sidebar"></i>
+          <i class="fas fa-table layout-icon" title="Toggle Panel"></i>
+          <i class="fas fa-border-all layout-icon" title="Customize Layout"></i>
+        </div>
+
+        <div class="window-controls">
+          <span class="control-box min-btn"></span>
+          <span class="control-box max-btn"></span>
+          <span class="control-box close-btn"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-area">
+      <div class="activity-bar">
+        <div class="activity-icon active"><i class="far fa-copy"></i></div>
+        <div class="activity-icon"><i class="fas fa-search"></i></div>
+        <div class="activity-icon"><i class="fas fa-code-branch"></i></div>
+        <div class="activity-icon"><i class="fas fa-bug"></i></div>
+        <div style="flex: 1"></div>
+        <div class="activity-icon"><i class="far fa-user-circle"></i></div>
+        <div class="activity-icon"><i class="fas fa-cog"></i></div>
+      </div>
+
+      <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <span>EXPLORER</span>
+          <div class="sidebar-actions">
+            <i class="fas fa-ellipsis-h"></i>
+            <i
+              class="fas fa-times mobile-close-btn"
+              onclick="toggleSidebarUI()"
+            ></i>
+          </div>
+        </div>
+
+        <div class="explorer-title open" onclick="toggleFolder()">
+          <i class="fas fa-chevron-right"></i>
+          <span>SOURABH_KUMAR_PORTFOLIO</span>
+        </div>
+
+        <ul class="file-list open" id="fileList">
+          <li
+            class="file-item active"
+            onclick="openFile('about')"
+            id="nav-about"
+          >
+            <i class="fab fa-html5 file-icon icon-html"></i>
+            <span>index.html</span>
+          </li>
+          <li
+            class="file-item"
+            onclick="openFile('education')"
+            id="nav-education"
+          >
+            <i class="fab fa-cuttlefish file-icon icon-cpp"></i>
+            <span>education.cpp</span>
+          </li>
+          <li
+            class="file-item"
+            onclick="openFile('experience')"
+            id="nav-experience"
+          >
+            <i class="fab fa-js file-icon icon-js"></i>
+            <span>experience.js</span>
+          </li>
+          <li class="file-item" onclick="openFile('skills')" id="nav-skills">
+            <i class="fab fa-css3-alt file-icon icon-css"></i>
+            <span>style.css</span>
+          </li>
+          <li
+            class="file-item"
+            onclick="openFile('projects')"
+            id="nav-projects"
+          >
+            <i class="fab fa-react file-icon icon-react"></i>
+            <span>projects.jsx</span>
+          </li>
+          <li
+            class="file-item"
+            onclick="openFile('achievements')"
+            id="nav-achievements"
+          >
+            <i class="fab fa-markdown file-icon icon-md"></i>
+            <span>achievements.md</span>
+          </li>
+          <li class="file-item" onclick="openFile('contact')" id="nav-contact">
+            <i class="fab fa-python file-icon icon-py"></i>
+            <span>contact.py</span>
+          </li>
         </ul>
       </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <header id="about" class="hero-section">
-      <div class="container hero-flex">
-        <div class="hero-text">
-          <h1>Hi, I'm <span class="highlight">Sourabh Kumar</span></h1>
-          <h2>Full Stack Developer</h2>
-          <p>
-            I am a software engineer specializing in
-            <strong>Next.js, Node.js, and Cloud Infrastructure</strong>.
-            Currently working on API governance engines and AI-driven workflow
-            automation. My background includes building scalable MVPs for
-            fintech and R&D for smart city solutions.
-          </p>
-          <div class="hero-btns">
-            <a href="#projects" class="btn btn-primary">View My Work</a>
-            <a
-              href="https://drive.google.com/file/d/1VFTtnr3Cjq6IXYsFYtV_FSOoZ6ITFZD2/view"
-              target="_blank"
-              class="btn btn-secondary"
-              >Resume</a
-            >
-          </div>
-          <div class="social-links" style="margin-top: 20px">
-            <a
-              href="https://www.linkedin.com/in/sourabh25002/"
-              target="_blank"
-              style="margin-right: 15px; font-size: 1.5rem"
-              aria-label="LinkedIn"
-            >
-              <i class="fab fa-linkedin"></i>
-            </a>
-
-            <a
-              href="https://github.com/Sourabh25002"
-              target="_blank"
-              style="margin-right: 15px; font-size: 1.5rem"
-              aria-label="GitHub"
-            >
-              <i class="fab fa-github"></i>
-            </a>
-
-            <a
-              href="https://leetcode.com/u/Sourabh25002/"
-              target="_blank"
-              style="margin-right: 15px; font-size: 1.5rem"
-              aria-label="LeetCode"
-            >
-              <i class="fas fa-code"></i>
-            </a>
-
-            <a
-              href="https://x.com/sky25002"
-              target="_blank"
-              style="margin-right: 15px; font-size: 1.5rem"
-              aria-label="X (Twitter)"
-            >
-              <i class="fa-brands fa-x-twitter"></i>
-            </a>
-
-            <a
-              href="mailto:sk25002kumar@gmail.com"
-              style="font-size: 1.5rem"
-              aria-label="Email"
-            >
-              <i class="fas fa-envelope"></i>
-            </a>
-          </div>
-        </div>
-        <div class="hero-image">
-          <img src="./assets/images/profile.png" alt="Sourabh Kumar" />
-        </div>
-      </div>
-    </header>
-
-    <!-- Education Section -->
-    <section id="education" class="section-pad">
-      <div class="container">
-        <h2 class="section-title">Education</h2>
-        <div class="timeline">
-          <article class="timeline-item">
-            <div class="timeline-date">2020 - 2024</div>
-            <div class="timeline-content">
-              <h3>Bachelor of Technology (CSE)</h3>
-              <h4>Dr. A. P. J. Abdul Kalam Technical University, Lucknow</h4>
-              <p><strong>SGPA: 9.3</strong></p>
-              <p style="color: var(--text-muted); margin-top: 5px">
-                Relevant Coursework: Data Structures & Algorithms, Operating
-                Systems, DBMS, Computer Networks, OOPS.
-              </p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience Section -->
-    <main>
-      <section id="experience" class="section-pad">
-        <div class="container">
-          <h2 class="section-title">Work Experience</h2>
-          <div class="timeline">
-            <article class="timeline-item">
-              <div class="timeline-date">Oct 2025 - Present</div>
-              <div class="timeline-content">
-                <h3>Software Engineer (Contract)</h3>
-                <h4>KineticAl (Remote, HQ: Texas)</h4>
-                <ul>
-                  <li>
-                    Built a policy-as-code governance engine for REST APIs that
-                    ingests OpenAPI specs and runs 29 distinct compliance rules.
-                  </li>
-                  <li>
-                    Integrated checks into CI/CD pipelines to validate every
-                    push/PR, achieving a ~13ms runtime while validating 1,000+
-                    APIs.
-                  </li>
-                  <li>
-                    Developed a review dashboard to output violation reports and
-                    weighted compliance scores.
-                  </li>
-                </ul>
+      <div class="editor-area" id="editorArea">
+        <div class="tabs-bar" id="tabsBar">
+          <div class="tabs-container">
+            <div class="tab active" id="tab-about">
+              <div class="tab-content">
+                <i class="fab fa-html5 icon-html" style="margin-right: 8px"></i>
+                <span>index.html</span>
               </div>
-            </article>
-
-            <article class="timeline-item">
-              <div class="timeline-date">Dec 2024 - Sept 2025</div>
-              <div class="timeline-content">
-                <h3>Full Stack Developer</h3>
-                <h4>IT Healthcare Solutions (Remote, HQ: London)</h4>
-                <ul>
-                  <li>
-                    Founding engineer for a customer-centric stock market MVP;
-                    scaled it to production in 5 months.
-                  </li>
-                  <li>
-                    Built a dashboard covering 1,900+ LSE companies and
-                    implemented real-time data updates via Socket.io.
-                  </li>
-                  <li>
-                    Integrated Finnhub API and developed a backend stock
-                    recommendation engine.
-                  </li>
-                </ul>
-              </div>
-            </article>
-
-            <article class="timeline-item">
-              <div class="timeline-date">July 2024 - Nov 2024</div>
-              <div class="timeline-content">
-                <h3>Full Stack Engineer (R&D)</h3>
-                <h4>ParkEZ (Sonbhadra, U.P)</h4>
-                <ul>
-                  <li>
-                    Developed an automated smart parking system with IoT
-                    integration (ESP32 sensors) and Razorpay cashless payments.
-                  </li>
-                  <li>
-                    Reduced spot finding time by 15-20 minutes and congestion by
-                    10% through dual-sensor fusion.
-                  </li>
-                  <li>
-                    Research from this project was recognized and published by
-                    IEEE.
-                  </li>
-                </ul>
-              </div>
-            </article>
-
-            <article class="timeline-item">
-              <div class="timeline-date">April 2024 - June 2024</div>
-              <div class="timeline-content">
-                <h3>Full Stack Developer Intern</h3>
-                <h4>Reachify (Delhi)</h4>
-                <ul>
-                  <li>
-                    Built core backend for a CRM platform with Instagram/Slack
-                    webhook integrations.
-                  </li>
-                  <li>
-                    Engineered a Python-based lead extractor, improving
-                    processing speed by 3x.
-                  </li>
-                </ul>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- Skills Section -->
-      <section id="skills" class="section-pad bg-light">
-        <div class="container">
-          <h2 class="section-title">Technical Skills</h2>
-          <div class="skills-grid">
-            <div class="skill-category">
-              <h3>Languages & Core</h3>
-              <div class="skill-tags">
-                <span>JavaScript</span>
-                <span>TypeScript</span>
-                <span>Python</span>
-                <span>C/C++</span>
-                <span>SQL</span>
-                <span>Data Structures</span>
-              </div>
-            </div>
-            <div class="skill-category">
-              <h3>Web Development</h3>
-              <div class="skill-tags">
-                <span>React.js</span>
-                <span>Next.js</span>
-                <span>Node.js</span>
-                <span>Express.js</span>
-                <span>HTML/CSS</span>
-              </div>
-            </div>
-            <div class="skill-category">
-              <h3>AI & Cloud</h3>
-              <div class="skill-tags">
-                <span>Generative AI (LLMs)</span>
-                <span>LangChain</span>
-                <span>RAG Pipelines</span>
-                <span>Docker</span>
-                <span>AWS</span>
-                <span>PostgreSQL</span>
-                <span>MongoDB</span>
-              </div>
+              <i class="fas fa-times tab-close"></i>
             </div>
           </div>
+          <div class="tabs-actions">
+            <i class="fas fa-play tab-action-icon" title="Run Code"></i>
+            <i class="fas fa-columns tab-action-icon" title="Split Editor"></i>
+            <i
+              class="fas fa-ellipsis-h tab-action-icon"
+              title="More Actions"
+            ></i>
+          </div>
         </div>
-      </section>
 
-      <!-- Projects Section -->
-      <section id="projects" class="section-pad">
-        <div class="container">
-          <h2 class="section-title">Featured Projects</h2>
-          <div class="project-grid">
-            <article class="project-card">
-              <div class="project-info">
-                <h3>Sky: AI Workflow Automation</h3>
-                <p>
-                  A visual AI workflow automation builder enabling teams to
-                  connect webhooks and AI steps. Features a React Flow node
-                  canvas and Google Gemini integration.
+        <div class="breadcrumb-bar">
+          src > portfolio >
+          <span id="breadcrumb-file" style="color: #ccc">index.html</span>
+        </div>
+
+        <div class="content-container">
+          <div id="file-about" class="code-file active ui-view">
+            <div class="about-section-container">
+              <div class="about-content-wrapper">
+                <h1 class="about-title">
+                  Hi, I'm <span class="text-highlight">Sourabh Kumar</span>
+                </h1>
+                <h2 class="about-role">Full Stack Developer</h2>
+                <p class="about-summary">
+                  I am a software engineer specializing in
+                  <strong class="text-highlight-secondary"
+                    >Next.js, Node.js, and Cloud Infrastructure</strong
+                  >. Currently working on API governance engines and AI-driven
+                  workflow automation. My background includes building scalable
+                  MVPs for fintech and R&D for smart city solutions.
                 </p>
-                <ul class="tech-stack">
-                  <li>Next.js</li>
-                  <li>PostgreSQL</li>
-                  <li>Inngest</li>
-                  <li>Better Auth</li>
-                </ul>
-                <div class="project-links">
-                  <a href="#" target="_blank"
-                    ><i class="fab fa-github"></i> Code</a
-                  >
-                  <a href="#" target="_blank"
-                    ><i class="fas fa-external-link-alt"></i> Live Demo</a
-                  >
-                </div>
-              </div>
-            </article>
 
-            <article class="project-card">
-              <div class="project-info">
-                <h3>Policy-as-Code Engine</h3>
-                <p>
-                  Automated governance tool for REST APIs. Ingests OpenAPI specs
-                  to run compliance rules and block CI/CD pipelines on
-                  violations.
-                </p>
-                <ul class="tech-stack">
-                  <li>Node.js</li>
-                  <li>CI/CD</li>
-                  <li>OpenAPI</li>
-                </ul>
-                <div class="project-links">
-                  <a href="#" target="_blank"
-                    ><i class="fab fa-github"></i> Code</a
-                  >
+                <div class="about-socials">
+                  <a
+                    href="https://linkedin.com/in/sourabh25002"
+                    target="_blank"
+                    class="social-icon"
+                    title="LinkedIn"
+                    ><i class="fab fa-linkedin-in"></i
+                  ></a>
+                  <a
+                    href="https://github.com/Sourabh25002"
+                    target="_blank"
+                    class="social-icon"
+                    title="GitHub"
+                    ><i class="fab fa-github"></i
+                  ></a>
+                  <a
+                    href="https://leetcode.com/u/Sourabh25002/"
+                    target="_blank"
+                    class="social-icon"
+                    title="LeetCode"
+                    ><i class="fas fa-code"></i
+                  ></a>
+                  <a
+                    href="https://x.com/sky25002"
+                    target="_blank"
+                    class="social-icon"
+                    title="X"
+                    ><i class="fab fa-x-twitter"></i
+                  ></a>
+                  <a
+                    href="mailto:sk25002kumar@gmail.com"
+                    class="social-icon"
+                    title="Email"
+                    ><i class="fas fa-envelope"></i
+                  ></a>
                 </div>
-              </div>
-            </article>
 
-            <article class="project-card">
-              <div class="project-info">
-                <h3>ParkEZ Smart Parking</h3>
-                <p>
-                  IoT-enabled parking management system with real-time occupancy
-                  tracking, OTP access, and cashless billing.
-                </p>
-                <ul class="tech-stack">
-                  <li>React</li>
-                  <li>Node.js</li>
-                  <li>IoT (ESP32)</li>
-                  <li>MongoDB</li>
-                </ul>
-                <div class="project-links">
-                  <a href="#" target="_blank"
-                    ><i class="fab fa-github"></i> Code</a
+                <div class="about-actions">
+                  <button class="btn-primary" onclick="openFile('projects')">
+                    View Work
+                  </button>
+                  <a href="Resume.pdf" target="_blank" class="btn-outline"
+                    >Download CV</a
                   >
                 </div>
               </div>
-            </article>
+              <div class="about-image-wrapper">
+                <img
+                  src="./assets/images/profile.png"
+                  alt="Sourabh Kumar"
+                  class="profile-img"
+                />
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
 
-      <!-- Achievements Section -->
-      <section id="achievements" class="section-pad bg-light">
-        <div class="container">
-          <h2 class="section-title">Achievements</h2>
-
-          <div class="achievements-grid">
-            <article class="achievement-card">
-              <div class="card-header">
-                <div class="icon-box">
-                  <i class="fas fa-trophy"></i>
+          <div id="file-education" class="code-file ui-view">
+            <div class="section-wrapper education-section">
+              <h2 class="section-header">
+                <i class="fas fa-graduation-cap"></i> Education
+              </h2>
+              <div class="timeline-container">
+                <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <h3 class="timeline-title">Bachelor of Technology (CSE)</h3>
+                    <h4 class="timeline-subtitle">
+                      Dr. A. P. J. Abdul Kalam Technical University | Lucknow,
+                      U.P
+                    </h4>
+                    <span class="timeline-date">2020 - 2024</span>
+                    <div class="timeline-desc">
+                      <p><strong>SGPA: 9.3</strong></p>
+                      <p class="coursework-text">
+                        Relevant Coursework: Data Structures & Algorithms,
+                        Operating Systems, DBMS, Computer Networks, OOPS.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <h3>Competitive Programming</h3>
+                <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <h3 class="timeline-title">
+                      Higher Secondary Education (12th Grade)
+                    </h3>
+                    <h4 class="timeline-subtitle">
+                      Vishnu Bhagwan Public School | Prayagraj, U.P
+                    </h4>
+                    <span class="timeline-date">March 2019</span>
+                  </div>
+                </div>
               </div>
+            </div>
+          </div>
+
+          <div id="file-experience" class="code-file ui-view">
+            <div class="section-wrapper experience-section">
+              <h2 class="section-header">
+                <i class="fas fa-briefcase"></i> Work Experience
+              </h2>
+              <div class="timeline-container">
+                <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <h3 class="timeline-title">Software Engineer (Contract)</h3>
+                    <h4 class="timeline-subtitle">
+                      KineticAl | Remote (Texas, U.S)
+                    </h4>
+                    <span class="timeline-date">Oct 2025 - Present</span>
+                    <ul class="job-details">
+                      <li>
+                        Built a policy-as-code governance engine for REST APIs
+                        that ingests OpenAPI specs and runs 29 compliance rules.
+                      </li>
+                      <li>
+                        Achieved ~13ms runtime validating 1,000+ APIs;
+                        integrated into CI/CD pipelines to block deploys on
+                        violations.
+                      </li>
+                    </ul>
+                    <div class="tech-tags">
+                      <span>Node.js</span><span>OpenAPI</span><span>CI/CD</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <h3 class="timeline-title">Full Stack Developer</h3>
+                    <h4 class="timeline-subtitle">
+                      IT Healthcare Solutions | Remote (London, U.K)
+                    </h4>
+                    <span class="timeline-date">Dec 2024 - Sept 2025</span>
+                    <ul class="job-details">
+                      <li>
+                        Founding engineer for a stock market MVP; scaled to
+                        production in 5 months.
+                      </li>
+                      <li>
+                        Built a dashboard for 1,900+ LSE companies with
+                        real-time Socket.io updates.
+                      </li>
+                    </ul>
+                    <div class="tech-tags">
+                      <span>Next.js</span><span>PostgreSQL</span
+                      ><span>AWS</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <h3 class="timeline-title">Full Stack Engineer (R&D)</h3>
+                    <h4 class="timeline-subtitle">ParkEZ | Sonbhadra, U.P</h4>
+                    <span class="timeline-date">July 2024 - Nov 2024</span>
+                    <ul class="job-details">
+                      <li>
+                        Developed an IoT smart parking system reducing
+                        congestion by 10%.
+                      </li>
+                      <li>Research recognized and published by IEEE.</li>
+                    </ul>
+                    <div class="tech-tags">
+                      <span>IoT</span><span>Node.js</span><span>React</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <h3 class="timeline-title">Full Stack Developer Intern</h3>
+                    <h4 class="timeline-subtitle">Reachify | Delhi</h4>
+                    <span class="timeline-date">April 2024 - June 2024</span>
+                    <ul class="job-details">
+                      <li>
+                        Built backend for CRM with Instagram/Slack integrations.
+                      </li>
+                      <li>
+                        Engineered Python lead extractor improving speed by 3x.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="file-skills" class="code-file ui-view">
+            <div class="section-wrapper skills-section">
+              <h2 class="section-header">
+                <i class="fas fa-tools"></i> Technical Skills
+              </h2>
+              <div class="skills-grid">
+                <div class="skill-category">
+                  <h3><i class="fas fa-code"></i> Languages</h3>
+                  <div class="skill-chips">
+                    <span class="chip">JavaScript</span
+                    ><span class="chip">TypeScript</span>
+                    <span class="chip">Python</span
+                    ><span class="chip">C/C++</span
+                    ><span class="chip">SQL</span>
+                  </div>
+                </div>
+                <div class="skill-category">
+                  <h3><i class="fas fa-layer-group"></i> Web Development</h3>
+                  <div class="skill-chips">
+                    <span class="chip">React.js</span
+                    ><span class="chip">Next.js</span>
+                    <span class="chip">Node.js</span
+                    ><span class="chip">Express.js</span>
+                    <span class="chip">HTML/CSS</span>
+                  </div>
+                </div>
+                <div class="skill-category">
+                  <h3><i class="fas fa-cloud"></i> AI & Cloud</h3>
+                  <div class="skill-chips">
+                    <span class="chip">Generative AI</span
+                    ><span class="chip">RAG Pipelines</span>
+                    <span class="chip">LangChain</span
+                    ><span class="chip">Docker</span>
+                    <span class="chip">AWS</span><span class="chip">Git</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="file-projects" class="code-file ui-view">
+            <div class="section-wrapper projects-section">
+              <h2 class="section-header">
+                <i class="fas fa-project-diagram"></i> Featured Projects
+              </h2>
+              <div class="projects-grid">
+                <div class="project-card">
+                  <div class="card-header">
+                    <h3>Sky: AI Workflow Automation</h3>
+                    <div class="card-links">
+                      <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                  </div>
+                  <p class="project-desc">
+                    Visual AI workflow builder enabling teams to connect
+                    webhooks and AI steps. Features a React Flow canvas and
+                    Google Gemini integration.
+                  </p>
+                  <div class="card-tech">
+                    <span>Next.js</span><span>PostgreSQL</span
+                    ><span>Inngest</span>
+                  </div>
+                </div>
+                <div class="project-card">
+                  <div class="card-header">
+                    <h3>Policy-as-Code Engine</h3>
+                    <div class="card-links">
+                      <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                  </div>
+                  <p class="project-desc">
+                    Automated governance tool for REST APIs. Ingests OpenAPI
+                    specs to run compliance rules and block CI/CD pipelines on
+                    violations.
+                  </p>
+                  <div class="card-tech">
+                    <span>Node.js</span><span>OpenAPI</span>
+                  </div>
+                </div>
+                <div class="project-card">
+                  <div class="card-header">
+                    <h3>ParkEZ Smart Parking</h3>
+                    <div class="card-links">
+                      <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                  </div>
+                  <p class="project-desc">
+                    IoT-enabled parking management system with real-time
+                    occupancy tracking, OTP access, and cashless billing.
+                  </p>
+                  <div class="card-tech">
+                    <span>React</span><span>IoT (ESP32)</span
+                    ><span>MongoDB</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="file-achievements" class="code-file ui-view">
+            <div class="section-wrapper achievements-section">
+              <h2 class="section-header">
+                <i class="fas fa-trophy"></i> Achievements
+              </h2>
               <ul class="achievement-list">
                 <li>
-                  <strong>LeetCode:</strong> Max Rating 1650+ (Top 4.8%). Solved
-                  500+ problems.
+                  <div class="achievement-icon">
+                    <i class="fas fa-code"></i>
+                  </div>
+                  <div class="achievement-content">
+                    <strong>LeetCode:</strong> Max Rating 1650+ (Top 4.8%).
+                    Solved 500+ problems. Rank 782/34k in Weekly Contest 418.
+                  </div>
                 </li>
                 <li>
-                  <strong>Rank 782</strong> / 34,628 in Weekly Contest 418.
+                  <div class="achievement-icon">
+                    <i class="fas fa-book-reader"></i>
+                  </div>
+                  <div class="achievement-content">
+                    <strong>IEEE Publication:</strong> Presented research paper
+                    at 2nd IEEE International Conference (available in IEEE
+                    Xplore).
+                  </div>
                 </li>
                 <li>
-                  <strong>Rank 527</strong> / 140,000+ in TCS CodeVita 11.
+                  <div class="achievement-icon">
+                    <i class="fas fa-globe"></i>
+                  </div>
+                  <div class="achievement-content">
+                    <strong>TCS CodeVita 11:</strong> Ranked 527 out of 140,000+
+                    participants globally.
+                  </div>
+                </li>
+                <li>
+                  <div class="achievement-icon">
+                    <i class="fas fa-medal"></i>
+                  </div>
+                  <div class="achievement-content">
+                    <strong>Smart India Hackathon 2023:</strong> Won 3rd place
+                    in internal round competing against 50+ teams.
+                  </div>
                 </li>
               </ul>
-            </article>
+            </div>
+          </div>
 
-            <article class="achievement-card">
-              <div class="card-header">
-                <div class="icon-box">
-                  <i class="fas fa-newspaper"></i>
+          <div id="file-contact" class="code-file ui-view">
+            <div class="section-wrapper contact-section">
+              <div class="contact-card">
+                <h2>Get In Touch</h2>
+                <p>
+                  I'm currently open to new opportunities. Whether you have a
+                  question or just want to say hi, I'll try my best to get back
+                  to you!
+                </p>
+                <a href="mailto:sk25002kumar@gmail.com" class="contact-btn"
+                  ><i class="fas fa-envelope"></i> Say Hello</a
+                >
+                <div class="contact-details">
+                  <div class="detail-item">
+                    <i class="fab fa-github"></i> <span>@Sourabh25002</span>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fab fa-linkedin"></i>
+                    <span>/in/sourabh25002</span>
+                  </div>
+                  <div class="detail-item">
+                    <i class="fas fa-map-marker-alt"></i> <span>India</span>
+                  </div>
                 </div>
-                <h3>Research & Hackathons</h3>
               </div>
-              <ul class="achievement-list">
-                <li>
-                  <strong>IEEE Publication:</strong> Presented research paper at
-                  2nd IEEE International Conference (available in IEEE Xplore).
-                </li>
-                <li>
-                  <strong>Smart India Hackathon 2023:</strong> Won 3rd place in
-                  internal round competing against 50+ teams.
-                </li>
-              </ul>
-            </article>
+            </div>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </div>
 
-    <footer class="footer">
-      <div class="container footer-flex">
-        <div class="footer-text">
-          <p>&copy; 2026 Sourabh Kumar. All rights reserved.</p>
-          <p class="built-with">Built with HTML, CSS & good vibes.</p>
+    <div class="status-bar">
+      <div class="status-left">
+        <div class="status-item">
+          <i class="fas fa-code-branch" style="font-size: 10px"></i>
+          <span>main*</span>
         </div>
-
-        <div class="footer-socials">
-          <a
-            href="https://github.com/YOUR_USERNAME"
-            target="_blank"
-            aria-label="GitHub"
-          >
-            <i class="fab fa-github"></i>
-          </a>
-          <a
-            href="https://linkedin.com/in/YOUR_USERNAME"
-            target="_blank"
-            aria-label="LinkedIn"
-          >
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="mailto:sk25002kumar@gmail.com" aria-label="Email">
-            <i class="fas fa-envelope"></i>
-          </a>
+        <div class="status-item">
+          <i class="fas fa-sync-alt" style="font-size: 10px"></i>
+        </div>
+        <div class="status-item">
+          <i class="fas fa-times-circle"></i> 0
+          <i class="fas fa-exclamation-triangle" style="margin-left: 5px"></i> 0
         </div>
       </div>
-    </footer>
+      <div class="status-right">
+        <div class="status-item">Ln 12, Col 45</div>
+        <div class="status-item">Spaces: 2</div>
+        <div class="status-item">UTF-8</div>
+        <div class="status-item">CRLF</div>
+        <div class="status-item">
+          <i class="fas fa-check" style="margin-right: 3px"></i> Prettier
+        </div>
+        <div class="status-item"><i class="far fa-bell"></i></div>
+      </div>
+    </div>
 
-    <script src="./assets/js/script.js"></script>
+    <script>
+      // Sidebar Toggle Logic for Mobile
+      function toggleFolder() {
+        const list = document.getElementById("fileList");
+        const icon = document.querySelector(".explorer-title i");
+        list.classList.toggle("open");
+        icon.style.transform = list.classList.contains("open")
+          ? "rotate(90deg)"
+          : "rotate(0deg)";
+      }
+
+      function toggleSidebarUI() {
+        const sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("active-mobile");
+
+        // Toggle Overlay effect if desired, or just handle sidebar class
+      }
+
+      // File Navigation Logic
+      function openFile(fileId) {
+        // 1. Hide all code files
+        document
+          .querySelectorAll(".code-file")
+          .forEach((el) => el.classList.remove("active"));
+
+        // 2. Remove active class from sidebar items
+        document
+          .querySelectorAll(".file-item")
+          .forEach((el) => el.classList.remove("active"));
+
+        // 3. Activate selected file and sidebar item
+        document.getElementById("file-" + fileId).classList.add("active");
+        document.getElementById("nav-" + fileId).classList.add("active");
+
+        // 4. Update Tab Content and Breadcrumb
+        const fileData = {
+          about: { name: "index.html", icon: "fab fa-html5 icon-html" },
+          education: {
+            name: "education.cpp",
+            icon: "fab fa-cuttlefish icon-cpp",
+          },
+          experience: { name: "experience.js", icon: "fab fa-js icon-js" },
+          skills: { name: "style.css", icon: "fab fa-css3-alt icon-css" },
+          projects: { name: "projects.jsx", icon: "fab fa-react icon-react" },
+          achievements: {
+            name: "achievements.md",
+            icon: "fab fa-markdown icon-md",
+          },
+          contact: { name: "contact.py", icon: "fab fa-python icon-py" },
+        };
+
+        const data = fileData[fileId];
+        const tabHtml = `<div class="tab-content">
+                            <i class="${data.icon}" style="margin-right: 8px;"></i> <span>${data.name}</span>
+                         </div>
+                         <i class="fas fa-times tab-close"></i>`;
+
+        document.getElementById("tab-about").innerHTML = tabHtml;
+        document.getElementById("breadcrumb-file").innerText = data.name;
+
+        // Auto-close sidebar on mobile after clicking
+        if (window.innerWidth <= 768) {
+          document.getElementById("sidebar").classList.remove("active-mobile");
+        }
+      }
+    </script>
   </body>
 </html>
