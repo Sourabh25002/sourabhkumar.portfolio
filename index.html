@@ -9,6 +9,12 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="title-bar">
@@ -89,7 +95,7 @@
             id="nav-about"
           >
             <i class="fab fa-html5 file-icon icon-html"></i>
-            <span>index.html</span>
+            <span>introduction.html</span>
           </li>
           <li
             class="file-item"
@@ -109,7 +115,7 @@
           </li>
           <li class="file-item" onclick="openFile('skills')" id="nav-skills">
             <i class="fab fa-css3-alt file-icon icon-css"></i>
-            <span>style.css</span>
+            <span>skills.css</span>
           </li>
           <li
             class="file-item"
@@ -134,13 +140,15 @@
         </ul>
       </div>
 
+      <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebarUI()"></div>
+
       <div class="editor-area" id="editorArea">
         <div class="tabs-bar" id="tabsBar">
           <div class="tabs-container">
             <div class="tab active" id="tab-about">
               <div class="tab-content">
                 <i class="fab fa-html5 icon-html" style="margin-right: 8px"></i>
-                <span>index.html</span>
+                <span>introduction.html</span>
               </div>
               <i class="fas fa-times tab-close"></i>
             </div>
@@ -157,7 +165,7 @@
 
         <div class="breadcrumb-bar">
           src > portfolio >
-          <span id="breadcrumb-file" style="color: #ccc">index.html</span>
+          <span id="breadcrumb-file" style="color: #ccc">introduction.html</span>
         </div>
 
         <div class="content-container">
@@ -171,10 +179,11 @@
                 <p class="about-summary">
                   I am a software engineer specializing in
                   <strong class="text-highlight-secondary"
-                    >Next.js, Node.js, and Cloud Infrastructure</strong
-                  >. Currently working on API governance engines and AI-driven
-                  workflow automation. My background includes building scalable
-                  MVPs for fintech and R&D for smart city solutions.
+                    >React.js, Next.js, Node.js, and Cloud Infrastructure</strong
+                  >. Currently building a digital wealth platform at AUM Capital
+                  Market managing ₹10k+ Cr in client assets. My background
+                  includes fintech MVPs, API governance engines, AI-driven
+                  workflow automation, and IoT smart city R&D.
                 </p>
 
                 <div class="about-socials">
@@ -264,9 +273,21 @@
                       Higher Secondary Education (12th Grade)
                     </h3>
                     <h4 class="timeline-subtitle">
-                      Vishnu Bhagwan Public School | Prayagraj, U.P
+                      Vishnu Bhagwan Public School and College | Prayagraj, U.P
                     </h4>
                     <span class="timeline-date">March 2019</span>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <h3 class="timeline-title">
+                      Secondary Education (10th Grade)
+                    </h3>
+                    <h4 class="timeline-subtitle">
+                      Vishnu Bhagwan Public School and College | Prayagraj, U.P
+                    </h4>
+                    <span class="timeline-date">March 2017</span>
                   </div>
                 </div>
               </div>
@@ -282,24 +303,72 @@
                 <div class="timeline-item">
                   <div class="timeline-marker"></div>
                   <div class="timeline-content">
-                    <h3 class="timeline-title">Software Engineer (Contract)</h3>
+                    <h3 class="timeline-title">Full Stack Developer</h3>
                     <h4 class="timeline-subtitle">
-                      KineticAl | Remote (Texas, U.S)
+                      AUM Capital Market Pvt. Ltd. | Remote (Kolkata, India)
                     </h4>
-                    <span class="timeline-date">Oct 2025 - Present</span>
+                    <span class="timeline-date">Feb 2026 - Present</span>
                     <ul class="job-details">
                       <li>
-                        Built a policy-as-code governance engine for REST APIs
-                        that ingests OpenAPI specs and runs 29 compliance rules.
+                        Developed features for AUM Sampann, a digital wealth
+                        platform managing ₹10k+ Cr in client assets; built the
+                        internal admin portal with role-based access, client
+                        assignment, scoped dashboards, and family-member
+                        portfolio sharing.
                       </li>
                       <li>
-                        Achieved ~13ms runtime validating 1,000+ APIs;
-                        integrated into CI/CD pipelines to block deploys on
-                        violations.
+                        Built Asset Holdings to track portfolios across 12+
+                        asset classes and Reports covering invested vs current
+                        value, XIRR/CAGR, unrealised P&L, sector/cap
+                        allocation, and Nifty 50/Sensex benchmark comparison.
+                      </li>
+                      <li>
+                        Integrated Cashfree for subscription; implemented
+                        Analytics for MF/PMS overlap via bar charts & Venn
+                        diagrams; shipped AI Reports and AI Vault for chat-based
+                        portfolio summaries and document Q&A.
+                      </li>
+                      <li>
+                        Built Super Admin Ops Dashboard to track daily users,
+                        AUM, and investment activity; added impersonation so
+                        RMs/Partners can act as clients and execute orders.
                       </li>
                     </ul>
                     <div class="tech-tags">
-                      <span>Node.js</span><span>OpenAPI</span><span>CI/CD</span>
+                      <span>React.js</span><span>Node.js</span><span>Express.js</span><span>MySQL</span><span>ChromaDB</span><span>AWS</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <h3 class="timeline-title">Software Engineer (Freelance)</h3>
+                    <h4 class="timeline-subtitle">
+                      KineticAI | Remote (Texas, U.S)
+                    </h4>
+                    <span class="timeline-date">Oct 2025 - Jan 2026</span>
+                    <ul class="job-details">
+                      <li>
+                        Built a policy-as-code governance engine for REST APIs
+                        that ingests OpenAPI specs, runs 29 rules across key
+                        specification areas, and outputs violation reports plus
+                        a configured weighted compliance score via a review
+                        dashboard.
+                      </li>
+                      <li>
+                        Integrated checks into CI/CD to validate every push/PR
+                        and block deploys on critical violations or score
+                        failures.
+                      </li>
+                      <li>
+                        Achieved ~13ms total runtime while validating 1,000+
+                        APIs across 18 OpenAPI spec files (including Amazon,
+                        Adobe).
+                      </li>
+                    </ul>
+                    <div class="tech-tags">
+                      <span>Next.js</span><span>Node.js</span><span>Express.js</span>
                     </div>
                   </div>
                 </div>
@@ -314,17 +383,24 @@
                     <span class="timeline-date">Dec 2024 - Sept 2025</span>
                     <ul class="job-details">
                       <li>
-                        Founding engineer for a stock market MVP; scaled to
-                        production in 5 months.
+                        Founding engineer, collaborated with the founder to
+                        build a customer-centric full-stack stock market MVP
+                        from scratch in 5 months, implementing 10+ features
+                        and scaling it into a production-ready platform.
                       </li>
                       <li>
-                        Built a dashboard for 1,900+ LSE companies with
-                        real-time Socket.io updates.
+                        Implemented auth & session handling and built a
+                        dashboard covering 1,900+ LSE companies across 50+
+                        metrics.
+                      </li>
+                      <li>
+                        Integrated Finnhub API for LSE, developed a backend
+                        stock recommendation engine, stock search with detailed
+                        pages, and real-time stock data updates via Socket.io.
                       </li>
                     </ul>
                     <div class="tech-tags">
-                      <span>Next.js</span><span>PostgreSQL</span
-                      ><span>AWS</span>
+                      <span>Next.js</span><span>Node.js</span><span>PostgreSQL</span><span>AWS</span><span>Socket.io</span>
                     </div>
                   </div>
                 </div>
@@ -333,17 +409,30 @@
                   <div class="timeline-marker"></div>
                   <div class="timeline-content">
                     <h3 class="timeline-title">Full Stack Engineer (R&D)</h3>
-                    <h4 class="timeline-subtitle">ParkEZ | Sonbhadra, U.P</h4>
+                    <h4 class="timeline-subtitle">
+                      ParkEZ | Sonbhadra, India
+                    </h4>
                     <span class="timeline-date">July 2024 - Nov 2024</span>
                     <ul class="job-details">
                       <li>
-                        Developed an IoT smart parking system reducing
-                        congestion by 10%.
+                        Developed a fully automated smart parking system with
+                        real-time spot availability, OTP-based entry/exit, and
+                        cashless payments, improving utilization and reducing
+                        manual operations.
                       </li>
-                      <li>Research recognized and published by IEEE.</li>
+                      <li>
+                        Integrated ESP32-based IR/ultrasonic sensors for near
+                        real-time occupancy synchronization, with OTP access
+                        via Twilio and cashless payments through Razorpay.
+                      </li>
+                      <li>
+                        Achieved 15–20 min faster spot finding, 10% less
+                        congestion, and 30% quicker checkout; research
+                        recognized and published by IEEE.
+                      </li>
                     </ul>
                     <div class="tech-tags">
-                      <span>IoT</span><span>Node.js</span><span>React</span>
+                      <span>React.js</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>ESP32</span>
                     </div>
                   </div>
                 </div>
@@ -352,16 +441,26 @@
                   <div class="timeline-marker"></div>
                   <div class="timeline-content">
                     <h3 class="timeline-title">Full Stack Developer Intern</h3>
-                    <h4 class="timeline-subtitle">Reachify | Delhi</h4>
+                    <h4 class="timeline-subtitle">
+                      Reachify | Delhi, India
+                    </h4>
                     <span class="timeline-date">April 2024 - June 2024</span>
                     <ul class="job-details">
                       <li>
-                        Built backend for CRM with Instagram/Slack integrations.
+                        Built core backend for a CRM platform with webhook
+                        integrations (Instagram, Slack) to unify multi-channel
+                        messages in one inbox, boosting social workflows and
+                        efficiency by 25–30%.
                       </li>
                       <li>
-                        Engineered Python lead extractor improving speed by 3x.
+                        Engineered a Python-based lead extractor, improving
+                        processing 3× to under 20s and boosting lead
+                        acquisition efficiency.
                       </li>
                     </ul>
+                    <div class="tech-tags">
+                      <span>React.js</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>Python</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -377,31 +476,49 @@
                 <div class="skill-category">
                   <h3><i class="fas fa-code"></i> Languages</h3>
                   <div class="skill-chips">
-                    <span class="chip">JavaScript</span
-                    ><span class="chip">TypeScript</span>
-                    <span class="chip">Python</span
-                    ><span class="chip">C/C++</span
-                    ><span class="chip">SQL</span>
+                    <span class="chip">JavaScript</span>
+                    <span class="chip">TypeScript</span>
+                    <span class="chip">Python</span>
+                    <span class="chip">C/C++</span>
+                    <span class="chip">SQL</span>
                   </div>
                 </div>
                 <div class="skill-category">
-                  <h3><i class="fas fa-layer-group"></i> Web Development</h3>
+                  <h3><i class="fas fa-layer-group"></i> Development Tools</h3>
                   <div class="skill-chips">
-                    <span class="chip">React.js</span
-                    ><span class="chip">Next.js</span>
-                    <span class="chip">Node.js</span
-                    ><span class="chip">Express.js</span>
-                    <span class="chip">HTML/CSS</span>
+                    <span class="chip">HTML</span>
+                    <span class="chip">CSS</span>
+                    <span class="chip">React.js</span>
+                    <span class="chip">Next.js</span>
+                    <span class="chip">Node.js</span>
+                    <span class="chip">Express.js</span>
+                    <span class="chip">PostgreSQL</span>
+                    <span class="chip">MongoDB</span>
+                    <span class="chip">MySQL</span>
                   </div>
                 </div>
                 <div class="skill-category">
-                  <h3><i class="fas fa-cloud"></i> AI & Cloud</h3>
+                  <h3><i class="fas fa-robot"></i> AI Engineering</h3>
                   <div class="skill-chips">
-                    <span class="chip">Generative AI</span
-                    ><span class="chip">RAG Pipelines</span>
-                    <span class="chip">LangChain</span
-                    ><span class="chip">Docker</span>
-                    <span class="chip">AWS</span><span class="chip">Git</span>
+                    <span class="chip">Generative AI</span>
+                    <span class="chip">LLMs</span>
+                    <span class="chip">RAG Pipelines</span>
+                    <span class="chip">Hugging Face</span>
+                    <span class="chip">LangChain</span>
+                    <span class="chip">LangGraph</span>
+                    <span class="chip">VectorDB</span>
+                    <span class="chip">ChromaDB</span>
+                  </div>
+                </div>
+                <div class="skill-category">
+                  <h3><i class="fas fa-cloud"></i> Cloud & Tools</h3>
+                  <div class="skill-chips">
+                    <span class="chip">Docker</span>
+                    <span class="chip">AWS</span>
+                    <span class="chip">CI/CD</span>
+                    <span class="chip">Git/GitHub</span>
+                    <span class="chip">Inngest</span>
+                    <span class="chip">Linux</span>
                   </div>
                 </div>
               </div>
@@ -416,19 +533,21 @@
               <div class="projects-grid">
                 <div class="project-card">
                   <div class="card-header">
-                    <h3>Sky: AI Workflow Automation</h3>
+                    <h3>Sky: Visual AI Workflow Automation Builder</h3>
                     <div class="card-links">
                       <a href="#"><i class="fab fa-github"></i></a>
                     </div>
                   </div>
                   <p class="project-desc">
-                    Visual AI workflow builder enabling teams to connect
-                    webhooks and AI steps. Features a React Flow canvas and
-                    Google Gemini integration.
+                    Built a custom workflow automation and AI agent builder with
+                    a visual node canvas, enabling teams to connect webhooks,
+                    integrations, and AI steps to automate end-to-end processes.
+                    Features a React Flow powered workflow editor with an
+                    extensible node library, auth/session management, billing
+                    via Polar, and Google Gemini integration for AI steps.
                   </p>
                   <div class="card-tech">
-                    <span>Next.js</span><span>PostgreSQL</span
-                    ><span>Inngest</span>
+                    <span>GenAI</span><span>React.js</span><span>Node.js</span><span>Express.js</span><span>PostgreSQL</span>
                   </div>
                 </div>
                 <div class="project-card">
@@ -478,8 +597,17 @@
                     <i class="fas fa-code"></i>
                   </div>
                   <div class="achievement-content">
-                    <strong>LeetCode:</strong> Max Rating 1650+ (Top 4.8%).
-                    Solved 500+ problems. Rank 782/34k in Weekly Contest 418.
+                    <strong>LeetCode Weekly Contest 418:</strong> Ranked 782
+                    out of 34,628 participants.
+                  </div>
+                </li>
+                <li>
+                  <div class="achievement-icon">
+                    <i class="fas fa-trophy"></i>
+                  </div>
+                  <div class="achievement-content">
+                    <strong>LeetCode:</strong> Solved 500+ problems and
+                    competed in 40+ contests, achieving a max rating of 1650+.
                   </div>
                 </li>
                 <li>
@@ -488,8 +616,8 @@
                   </div>
                   <div class="achievement-content">
                     <strong>IEEE Publication:</strong> Presented research paper
-                    at 2nd IEEE International Conference (available in IEEE
-                    Xplore).
+                    at the 2nd IEEE International Conference and published
+                    peer-reviewed paper in IEEE Xplore.
                   </div>
                 </li>
                 <li>
@@ -497,8 +625,8 @@
                     <i class="fas fa-globe"></i>
                   </div>
                   <div class="achievement-content">
-                    <strong>TCS CodeVita 11:</strong> Ranked 527 out of 140,000+
-                    participants globally.
+                    <strong>TCS CodeVita 11:</strong> Ranked 527 out of
+                    140,000+ participants from over 50+ countries.
                   </div>
                 </li>
                 <li>
@@ -507,7 +635,7 @@
                   </div>
                   <div class="achievement-content">
                     <strong>Smart India Hackathon 2023:</strong> Won 3rd place
-                    in internal round competing against 50+ teams.
+                    at the internal round, competing against 50+ teams.
                   </div>
                 </li>
               </ul>
@@ -584,9 +712,9 @@
 
       function toggleSidebarUI() {
         const sidebar = document.getElementById("sidebar");
+        const backdrop = document.getElementById("sidebarBackdrop");
         sidebar.classList.toggle("active-mobile");
-
-        // Toggle Overlay effect if desired, or just handle sidebar class
+        backdrop.classList.toggle("active");
       }
 
       // File Navigation Logic
@@ -607,13 +735,13 @@
 
         // 4. Update Tab Content and Breadcrumb
         const fileData = {
-          about: { name: "index.html", icon: "fab fa-html5 icon-html" },
+          about: { name: "introduction.html", icon: "fab fa-html5 icon-html" },
           education: {
             name: "education.cpp",
             icon: "fab fa-cuttlefish icon-cpp",
           },
           experience: { name: "experience.js", icon: "fab fa-js icon-js" },
-          skills: { name: "style.css", icon: "fab fa-css3-alt icon-css" },
+          skills: { name: "skills.css", icon: "fab fa-css3-alt icon-css" },
           projects: { name: "projects.jsx", icon: "fab fa-react icon-react" },
           achievements: {
             name: "achievements.md",
