@@ -1,769 +1,249 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sourabh Kumar - Portfolio</title>
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="title-bar">
-      <div class="title-bar-left">
-        <i class="fas fa-code vscode-icon"></i>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Sourabh Kumar, a full-stack developer working across web applications, backend systems, and AI workflows." />
+  <meta name="theme-color" content="#181818" />
+  <title>Sourabh Kumar — Full-Stack Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@vscode/codicons/dist/codicon.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <script src="./assets/js/script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#panel-about">Skip to portfolio content</a>
 
-        <div class="mobile-menu-btn" onclick="toggleSidebarUI()">
-          <i class="fas fa-bars"></i>
-        </div>
-
-        <span class="menu-item">File</span>
-        <span class="menu-item">Edit</span>
-        <span class="menu-item">Selection</span>
-        <span class="menu-item">View</span>
-        <span class="menu-item">Go</span>
-        <span class="menu-item">Run</span>
-        <span class="menu-item"><i class="fas fa-ellipsis-h"></i></span>
-      </div>
-
-      <div class="title-bar-center">
-        <div class="nav-arrows">
-          <i class="fas fa-arrow-left nav-arrow"></i>
-          <i class="fas fa-arrow-right nav-arrow"></i>
-        </div>
-        <div class="search-bar">
-          <i class="fas fa-search search-icon"></i>
-          <span>Sourabh Kumar Portfolio</span>
-        </div>
-      </div>
-
-      <div class="title-bar-right">
-        <div class="layout-controls">
-          <i class="fas fa-columns layout-icon" title="Toggle Sidebar"></i>
-          <i class="fas fa-table layout-icon" title="Toggle Panel"></i>
-          <i class="fas fa-border-all layout-icon" title="Customize Layout"></i>
-        </div>
-
-        <div class="window-controls">
-          <span class="control-box min-btn"></span>
-          <span class="control-box max-btn"></span>
-          <span class="control-box close-btn"></span>
-        </div>
-      </div>
+  <header class="title-bar">
+    <div class="title-bar-left">
+      <button class="chrome-button mobile-menu-button" type="button" aria-label="Open portfolio explorer" aria-expanded="false" aria-controls="sidebar">
+        <i class="codicon codicon-menu"></i>
+      </button>
+      <i class="codicon codicon-vscode vscode-mark" aria-hidden="true"></i>
+      <div class="app-menus" aria-hidden="true"><span>File</span><span>Edit</span><span>Selection</span><span>View</span><span>Go</span><span>Run</span><span>Terminal</span></div>
     </div>
 
-    <div class="main-area">
-      <div class="activity-bar">
-        <div class="activity-icon active"><i class="far fa-copy"></i></div>
-        <div class="activity-icon"><i class="fas fa-search"></i></div>
-        <div class="activity-icon"><i class="fas fa-code-branch"></i></div>
-        <div class="activity-icon"><i class="fas fa-bug"></i></div>
-        <div style="flex: 1"></div>
-        <div class="activity-icon"><i class="far fa-user-circle"></i></div>
-        <div class="activity-icon"><i class="fas fa-cog"></i></div>
-      </div>
-
-      <div class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-          <span>EXPLORER</span>
-          <div class="sidebar-actions">
-            <i class="fas fa-ellipsis-h"></i>
-            <i
-              class="fas fa-times mobile-close-btn"
-              onclick="toggleSidebarUI()"
-            ></i>
-          </div>
-        </div>
-
-        <div class="explorer-title open" onclick="toggleFolder()">
-          <i class="fas fa-chevron-right"></i>
-          <span>SOURABH_KUMAR_PORTFOLIO</span>
-        </div>
-
-        <ul class="file-list open" id="fileList">
-          <li
-            class="file-item active"
-            onclick="openFile('about')"
-            id="nav-about"
-          >
-            <i class="fab fa-html5 file-icon icon-html"></i>
-            <span>introduction.html</span>
-          </li>
-          <li
-            class="file-item"
-            onclick="openFile('education')"
-            id="nav-education"
-          >
-            <i class="fab fa-cuttlefish file-icon icon-cpp"></i>
-            <span>education.cpp</span>
-          </li>
-          <li
-            class="file-item"
-            onclick="openFile('experience')"
-            id="nav-experience"
-          >
-            <i class="fab fa-js file-icon icon-js"></i>
-            <span>experience.js</span>
-          </li>
-          <li class="file-item" onclick="openFile('skills')" id="nav-skills">
-            <i class="fab fa-css3-alt file-icon icon-css"></i>
-            <span>skills.css</span>
-          </li>
-          <li
-            class="file-item"
-            onclick="openFile('projects')"
-            id="nav-projects"
-          >
-            <i class="fab fa-react file-icon icon-react"></i>
-            <span>projects.jsx</span>
-          </li>
-          <li
-            class="file-item"
-            onclick="openFile('achievements')"
-            id="nav-achievements"
-          >
-            <i class="fab fa-markdown file-icon icon-md"></i>
-            <span>achievements.md</span>
-          </li>
-          <li class="file-item" onclick="openFile('contact')" id="nav-contact">
-            <i class="fab fa-python file-icon icon-py"></i>
-            <span>contact.py</span>
-          </li>
-        </ul>
-      </div>
-
-      <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebarUI()"></div>
-
-      <div class="editor-area" id="editorArea">
-        <div class="tabs-bar" id="tabsBar">
-          <div class="tabs-container">
-            <div class="tab active" id="tab-about">
-              <div class="tab-content">
-                <i class="fab fa-html5 icon-html" style="margin-right: 8px"></i>
-                <span>introduction.html</span>
-              </div>
-              <i class="fas fa-times tab-close"></i>
-            </div>
-          </div>
-          <div class="tabs-actions">
-            <i class="fas fa-play tab-action-icon" title="Run Code"></i>
-            <i class="fas fa-columns tab-action-icon" title="Split Editor"></i>
-            <i
-              class="fas fa-ellipsis-h tab-action-icon"
-              title="More Actions"
-            ></i>
-          </div>
-        </div>
-
-        <div class="breadcrumb-bar">
-          src > portfolio >
-          <span id="breadcrumb-file" style="color: #ccc">introduction.html</span>
-        </div>
-
-        <div class="content-container">
-          <div id="file-about" class="code-file active ui-view">
-            <div class="about-section-container">
-              <div class="about-content-wrapper">
-                <h1 class="about-title">
-                  Hi, I'm <span class="text-highlight">Sourabh Kumar</span>
-                </h1>
-                <h2 class="about-role">Full Stack Developer</h2>
-                <p class="about-summary">
-                  I am a software engineer specializing in
-                  <strong class="text-highlight-secondary"
-                    >React.js, Next.js, Node.js, and Cloud Infrastructure</strong
-                  >. Currently building a digital wealth platform at AUM Capital
-                  Market managing ₹10k+ Cr in client assets. My background
-                  includes fintech MVPs, API governance engines, AI-driven
-                  workflow automation, and IoT smart city R&D.
-                </p>
-
-                <div class="about-socials">
-                  <a
-                    href="https://linkedin.com/in/sourabh25002"
-                    target="_blank"
-                    class="social-icon"
-                    title="LinkedIn"
-                    ><i class="fab fa-linkedin-in"></i
-                  ></a>
-                  <a
-                    href="https://github.com/Sourabh25002"
-                    target="_blank"
-                    class="social-icon"
-                    title="GitHub"
-                    ><i class="fab fa-github"></i
-                  ></a>
-                  <a
-                    href="https://leetcode.com/u/Sourabh25002/"
-                    target="_blank"
-                    class="social-icon"
-                    title="LeetCode"
-                    ><i class="fas fa-code"></i
-                  ></a>
-                  <a
-                    href="https://x.com/sky25002"
-                    target="_blank"
-                    class="social-icon"
-                    title="X"
-                    ><i class="fab fa-x-twitter"></i
-                  ></a>
-                  <a
-                    href="mailto:sk25002kumar@gmail.com"
-                    class="social-icon"
-                    title="Email"
-                    ><i class="fas fa-envelope"></i
-                  ></a>
-                </div>
-
-                <div class="about-actions">
-                  <button class="btn-primary" onclick="openFile('projects')">
-                    View Work
-                  </button>
-                  <a href="Resume.pdf" target="_blank" class="btn-outline"
-                    >Download CV</a
-                  >
-                </div>
-              </div>
-              <div class="about-image-wrapper">
-                <img
-                  src="./assets/images/profile.png"
-                  alt="Sourabh Kumar"
-                  class="profile-img"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div id="file-education" class="code-file ui-view">
-            <div class="section-wrapper education-section">
-              <h2 class="section-header">
-                <i class="fas fa-graduation-cap"></i> Education
-              </h2>
-              <div class="timeline-container">
-                <div class="timeline-item">
-                  <div class="timeline-marker"></div>
-                  <div class="timeline-content">
-                    <h3 class="timeline-title">Bachelor of Technology (CSE)</h3>
-                    <h4 class="timeline-subtitle">
-                      Dr. A. P. J. Abdul Kalam Technical University | Lucknow,
-                      U.P
-                    </h4>
-                    <span class="timeline-date">2020 - 2024</span>
-                    <div class="timeline-desc">
-                      <p><strong>SGPA: 9.3</strong></p>
-                      <p class="coursework-text">
-                        Relevant Coursework: Data Structures & Algorithms,
-                        Operating Systems, DBMS, Computer Networks, OOPS.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="timeline-item">
-                  <div class="timeline-marker"></div>
-                  <div class="timeline-content">
-                    <h3 class="timeline-title">
-                      Higher Secondary Education (12th Grade)
-                    </h3>
-                    <h4 class="timeline-subtitle">
-                      Vishnu Bhagwan Public School and College | Prayagraj, U.P
-                    </h4>
-                    <span class="timeline-date">March 2019</span>
-                  </div>
-                </div>
-                <div class="timeline-item">
-                  <div class="timeline-marker"></div>
-                  <div class="timeline-content">
-                    <h3 class="timeline-title">
-                      Secondary Education (10th Grade)
-                    </h3>
-                    <h4 class="timeline-subtitle">
-                      Vishnu Bhagwan Public School and College | Prayagraj, U.P
-                    </h4>
-                    <span class="timeline-date">March 2017</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div id="file-experience" class="code-file ui-view">
-            <div class="section-wrapper experience-section">
-              <h2 class="section-header">
-                <i class="fas fa-briefcase"></i> Work Experience
-              </h2>
-              <div class="timeline-container">
-                <div class="timeline-item">
-                  <div class="timeline-marker"></div>
-                  <div class="timeline-content">
-                    <h3 class="timeline-title">Full Stack Developer</h3>
-                    <h4 class="timeline-subtitle">
-                      AUM Capital Market Pvt. Ltd. | Remote (Kolkata, India)
-                    </h4>
-                    <span class="timeline-date">Feb 2026 - Present</span>
-                    <ul class="job-details">
-                      <li>
-                        Developed features for AUM Sampann, a digital wealth
-                        platform managing ₹10k+ Cr in client assets; built the
-                        internal admin portal with role-based access, client
-                        assignment, scoped dashboards, and family-member
-                        portfolio sharing.
-                      </li>
-                      <li>
-                        Built Asset Holdings to track portfolios across 12+
-                        asset classes and Reports covering invested vs current
-                        value, XIRR/CAGR, unrealised P&L, sector/cap
-                        allocation, and Nifty 50/Sensex benchmark comparison.
-                      </li>
-                      <li>
-                        Integrated Cashfree for subscription; implemented
-                        Analytics for MF/PMS overlap via bar charts & Venn
-                        diagrams; shipped AI Reports and AI Vault for chat-based
-                        portfolio summaries and document Q&A.
-                      </li>
-                      <li>
-                        Built Super Admin Ops Dashboard to track daily users,
-                        AUM, and investment activity; added impersonation so
-                        RMs/Partners can act as clients and execute orders.
-                      </li>
-                    </ul>
-                    <div class="tech-tags">
-                      <span>React.js</span><span>Node.js</span><span>Express.js</span><span>MySQL</span><span>ChromaDB</span><span>AWS</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="timeline-item">
-                  <div class="timeline-marker"></div>
-                  <div class="timeline-content">
-                    <h3 class="timeline-title">Software Engineer (Freelance)</h3>
-                    <h4 class="timeline-subtitle">
-                      KineticAI | Remote (Texas, U.S)
-                    </h4>
-                    <span class="timeline-date">Oct 2025 - Jan 2026</span>
-                    <ul class="job-details">
-                      <li>
-                        Built a policy-as-code governance engine for REST APIs
-                        that ingests OpenAPI specs, runs 29 rules across key
-                        specification areas, and outputs violation reports plus
-                        a configured weighted compliance score via a review
-                        dashboard.
-                      </li>
-                      <li>
-                        Integrated checks into CI/CD to validate every push/PR
-                        and block deploys on critical violations or score
-                        failures.
-                      </li>
-                      <li>
-                        Achieved ~13ms total runtime while validating 1,000+
-                        APIs across 18 OpenAPI spec files (including Amazon,
-                        Adobe).
-                      </li>
-                    </ul>
-                    <div class="tech-tags">
-                      <span>Next.js</span><span>Node.js</span><span>Express.js</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="timeline-item">
-                  <div class="timeline-marker"></div>
-                  <div class="timeline-content">
-                    <h3 class="timeline-title">Full Stack Developer</h3>
-                    <h4 class="timeline-subtitle">
-                      IT Healthcare Solutions | Remote (London, U.K)
-                    </h4>
-                    <span class="timeline-date">Dec 2024 - Sept 2025</span>
-                    <ul class="job-details">
-                      <li>
-                        Founding engineer, collaborated with the founder to
-                        build a customer-centric full-stack stock market MVP
-                        from scratch in 5 months, implementing 10+ features
-                        and scaling it into a production-ready platform.
-                      </li>
-                      <li>
-                        Implemented auth & session handling and built a
-                        dashboard covering 1,900+ LSE companies across 50+
-                        metrics.
-                      </li>
-                      <li>
-                        Integrated Finnhub API for LSE, developed a backend
-                        stock recommendation engine, stock search with detailed
-                        pages, and real-time stock data updates via Socket.io.
-                      </li>
-                    </ul>
-                    <div class="tech-tags">
-                      <span>Next.js</span><span>Node.js</span><span>PostgreSQL</span><span>AWS</span><span>Socket.io</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="timeline-item">
-                  <div class="timeline-marker"></div>
-                  <div class="timeline-content">
-                    <h3 class="timeline-title">Full Stack Engineer (R&D)</h3>
-                    <h4 class="timeline-subtitle">
-                      ParkEZ | Sonbhadra, India
-                    </h4>
-                    <span class="timeline-date">July 2024 - Nov 2024</span>
-                    <ul class="job-details">
-                      <li>
-                        Developed a fully automated smart parking system with
-                        real-time spot availability, OTP-based entry/exit, and
-                        cashless payments, improving utilization and reducing
-                        manual operations.
-                      </li>
-                      <li>
-                        Integrated ESP32-based IR/ultrasonic sensors for near
-                        real-time occupancy synchronization, with OTP access
-                        via Twilio and cashless payments through Razorpay.
-                      </li>
-                      <li>
-                        Achieved 15–20 min faster spot finding, 10% less
-                        congestion, and 30% quicker checkout; research
-                        recognized and published by IEEE.
-                      </li>
-                    </ul>
-                    <div class="tech-tags">
-                      <span>React.js</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>ESP32</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="timeline-item">
-                  <div class="timeline-marker"></div>
-                  <div class="timeline-content">
-                    <h3 class="timeline-title">Full Stack Developer Intern</h3>
-                    <h4 class="timeline-subtitle">
-                      Reachify | Delhi, India
-                    </h4>
-                    <span class="timeline-date">April 2024 - June 2024</span>
-                    <ul class="job-details">
-                      <li>
-                        Built core backend for a CRM platform with webhook
-                        integrations (Instagram, Slack) to unify multi-channel
-                        messages in one inbox, boosting social workflows and
-                        efficiency by 25–30%.
-                      </li>
-                      <li>
-                        Engineered a Python-based lead extractor, improving
-                        processing 3× to under 20s and boosting lead
-                        acquisition efficiency.
-                      </li>
-                    </ul>
-                    <div class="tech-tags">
-                      <span>React.js</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>Python</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div id="file-skills" class="code-file ui-view">
-            <div class="section-wrapper skills-section">
-              <h2 class="section-header">
-                <i class="fas fa-tools"></i> Technical Skills
-              </h2>
-              <div class="skills-grid">
-                <div class="skill-category">
-                  <h3><i class="fas fa-code"></i> Languages</h3>
-                  <div class="skill-chips">
-                    <span class="chip">JavaScript</span>
-                    <span class="chip">TypeScript</span>
-                    <span class="chip">Python</span>
-                    <span class="chip">C/C++</span>
-                    <span class="chip">SQL</span>
-                  </div>
-                </div>
-                <div class="skill-category">
-                  <h3><i class="fas fa-layer-group"></i> Development Tools</h3>
-                  <div class="skill-chips">
-                    <span class="chip">HTML</span>
-                    <span class="chip">CSS</span>
-                    <span class="chip">React.js</span>
-                    <span class="chip">Next.js</span>
-                    <span class="chip">Node.js</span>
-                    <span class="chip">Express.js</span>
-                    <span class="chip">PostgreSQL</span>
-                    <span class="chip">MongoDB</span>
-                    <span class="chip">MySQL</span>
-                  </div>
-                </div>
-                <div class="skill-category">
-                  <h3><i class="fas fa-robot"></i> AI Engineering</h3>
-                  <div class="skill-chips">
-                    <span class="chip">Generative AI</span>
-                    <span class="chip">LLMs</span>
-                    <span class="chip">RAG Pipelines</span>
-                    <span class="chip">Hugging Face</span>
-                    <span class="chip">LangChain</span>
-                    <span class="chip">LangGraph</span>
-                    <span class="chip">VectorDB</span>
-                    <span class="chip">ChromaDB</span>
-                  </div>
-                </div>
-                <div class="skill-category">
-                  <h3><i class="fas fa-cloud"></i> Cloud & Tools</h3>
-                  <div class="skill-chips">
-                    <span class="chip">Docker</span>
-                    <span class="chip">AWS</span>
-                    <span class="chip">CI/CD</span>
-                    <span class="chip">Git/GitHub</span>
-                    <span class="chip">Inngest</span>
-                    <span class="chip">Linux</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div id="file-projects" class="code-file ui-view">
-            <div class="section-wrapper projects-section">
-              <h2 class="section-header">
-                <i class="fas fa-project-diagram"></i> Featured Projects
-              </h2>
-              <div class="projects-grid">
-                <div class="project-card">
-                  <div class="card-header">
-                    <h3>Sky: Visual AI Workflow Automation Builder</h3>
-                    <div class="card-links">
-                      <a href="#"><i class="fab fa-github"></i></a>
-                    </div>
-                  </div>
-                  <p class="project-desc">
-                    Built a custom workflow automation and AI agent builder with
-                    a visual node canvas, enabling teams to connect webhooks,
-                    integrations, and AI steps to automate end-to-end processes.
-                    Features a React Flow powered workflow editor with an
-                    extensible node library, auth/session management, billing
-                    via Polar, and Google Gemini integration for AI steps.
-                  </p>
-                  <div class="card-tech">
-                    <span>GenAI</span><span>React.js</span><span>Node.js</span><span>Express.js</span><span>PostgreSQL</span>
-                  </div>
-                </div>
-                <div class="project-card">
-                  <div class="card-header">
-                    <h3>Policy-as-Code Engine</h3>
-                    <div class="card-links">
-                      <a href="#"><i class="fab fa-github"></i></a>
-                    </div>
-                  </div>
-                  <p class="project-desc">
-                    Automated governance tool for REST APIs. Ingests OpenAPI
-                    specs to run compliance rules and block CI/CD pipelines on
-                    violations.
-                  </p>
-                  <div class="card-tech">
-                    <span>Node.js</span><span>OpenAPI</span>
-                  </div>
-                </div>
-                <div class="project-card">
-                  <div class="card-header">
-                    <h3>ParkEZ Smart Parking</h3>
-                    <div class="card-links">
-                      <a href="#"><i class="fab fa-github"></i></a>
-                    </div>
-                  </div>
-                  <p class="project-desc">
-                    IoT-enabled parking management system with real-time
-                    occupancy tracking, OTP access, and cashless billing.
-                  </p>
-                  <div class="card-tech">
-                    <span>React</span><span>IoT (ESP32)</span
-                    ><span>MongoDB</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div id="file-achievements" class="code-file ui-view">
-            <div class="section-wrapper achievements-section">
-              <h2 class="section-header">
-                <i class="fas fa-trophy"></i> Achievements
-              </h2>
-              <ul class="achievement-list">
-                <li>
-                  <div class="achievement-icon">
-                    <i class="fas fa-code"></i>
-                  </div>
-                  <div class="achievement-content">
-                    <strong>LeetCode Weekly Contest 418:</strong> Ranked 782
-                    out of 34,628 participants.
-                  </div>
-                </li>
-                <li>
-                  <div class="achievement-icon">
-                    <i class="fas fa-trophy"></i>
-                  </div>
-                  <div class="achievement-content">
-                    <strong>LeetCode:</strong> Solved 500+ problems and
-                    competed in 40+ contests, achieving a max rating of 1650+.
-                  </div>
-                </li>
-                <li>
-                  <div class="achievement-icon">
-                    <i class="fas fa-book-reader"></i>
-                  </div>
-                  <div class="achievement-content">
-                    <strong>IEEE Publication:</strong> Presented research paper
-                    at the 2nd IEEE International Conference and published
-                    peer-reviewed paper in IEEE Xplore.
-                  </div>
-                </li>
-                <li>
-                  <div class="achievement-icon">
-                    <i class="fas fa-globe"></i>
-                  </div>
-                  <div class="achievement-content">
-                    <strong>TCS CodeVita 11:</strong> Ranked 527 out of
-                    140,000+ participants from over 50+ countries.
-                  </div>
-                </li>
-                <li>
-                  <div class="achievement-icon">
-                    <i class="fas fa-medal"></i>
-                  </div>
-                  <div class="achievement-content">
-                    <strong>Smart India Hackathon 2023:</strong> Won 3rd place
-                    at the internal round, competing against 50+ teams.
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div id="file-contact" class="code-file ui-view">
-            <div class="section-wrapper contact-section">
-              <div class="contact-card">
-                <h2>Get In Touch</h2>
-                <p>
-                  I'm currently open to new opportunities. Whether you have a
-                  question or just want to say hi, I'll try my best to get back
-                  to you!
-                </p>
-                <a href="mailto:sk25002kumar@gmail.com" class="contact-btn"
-                  ><i class="fas fa-envelope"></i> Say Hello</a
-                >
-                <div class="contact-details">
-                  <div class="detail-item">
-                    <i class="fab fa-github"></i> <span>@Sourabh25002</span>
-                  </div>
-                  <div class="detail-item">
-                    <i class="fab fa-linkedin"></i>
-                    <span>/in/sourabh25002</span>
-                  </div>
-                  <div class="detail-item">
-                    <i class="fas fa-map-marker-alt"></i> <span>India</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="command-center" aria-label="Portfolio command center">
+      <div class="history-buttons" aria-hidden="true"><i class="codicon codicon-arrow-left"></i><i class="codicon codicon-arrow-right"></i></div>
+      <button class="command-search" type="button" data-open-file="about">
+        <i class="codicon codicon-search"></i><span>Sourabh Kumar — Portfolio</span>
+      </button>
     </div>
 
-    <div class="status-bar">
-      <div class="status-left">
-        <div class="status-item">
-          <i class="fas fa-code-branch" style="font-size: 10px"></i>
-          <span>main*</span>
-        </div>
-        <div class="status-item">
-          <i class="fas fa-sync-alt" style="font-size: 10px"></i>
-        </div>
-        <div class="status-item">
-          <i class="fas fa-times-circle"></i> 0
-          <i class="fas fa-exclamation-triangle" style="margin-left: 5px"></i> 0
-        </div>
-      </div>
-      <div class="status-right">
-        <div class="status-item">Ln 12, Col 45</div>
-        <div class="status-item">Spaces: 2</div>
-        <div class="status-item">UTF-8</div>
-        <div class="status-item">CRLF</div>
-        <div class="status-item">
-          <i class="fas fa-check" style="margin-right: 3px"></i> Prettier
-        </div>
-        <div class="status-item"><i class="far fa-bell"></i></div>
-      </div>
+    <div class="title-bar-right" aria-hidden="true">
+      <i class="codicon codicon-layout-sidebar-left"></i><i class="codicon codicon-layout-panel"></i><i class="codicon codicon-layout"></i>
+      <div class="window-controls"><span></span><span></span><span class="window-close"></span></div>
     </div>
+  </header>
 
-    <script>
-      // Sidebar Toggle Logic for Mobile
-      function toggleFolder() {
-        const list = document.getElementById("fileList");
-        const icon = document.querySelector(".explorer-title i");
-        list.classList.toggle("open");
-        icon.style.transform = list.classList.contains("open")
-          ? "rotate(90deg)"
-          : "rotate(0deg)";
-      }
+  <div class="workspace">
+    <aside class="activity-bar" aria-label="Workspace tools">
+      <div>
+        <button class="activity-button active" type="button" data-toggle-sidebar aria-label="Toggle Explorer" title="Explorer"><i class="codicon codicon-files"></i></button>
+        <button class="activity-button" type="button" data-open-file="skills" aria-label="Open skills" title="Search skills"><i class="codicon codicon-search"></i></button>
+        <a class="activity-button" href="https://github.com/Sourabh25002" target="_blank" rel="noreferrer" aria-label="GitHub profile" title="Source Control"><i class="codicon codicon-source-control"></i></a>
+        <button class="activity-button" type="button" data-open-file="projects" aria-label="Open projects" title="Run projects"><i class="codicon codicon-run-all"></i></button>
+      </div>
+      <div>
+        <button class="activity-button" type="button" data-open-file="contact" aria-label="Open contact" title="Accounts"><i class="codicon codicon-account"></i></button>
+        <a class="activity-button" href="https://drive.google.com/file/d/1VFTtnr3Cjq6IXYsFYtV_FSOoZ6ITFZD2/view" target="_blank" rel="noreferrer" aria-label="Open resume" title="Resume"><i class="codicon codicon-settings-gear"></i></a>
+      </div>
+    </aside>
 
-      function toggleSidebarUI() {
-        const sidebar = document.getElementById("sidebar");
-        const backdrop = document.getElementById("sidebarBackdrop");
-        sidebar.classList.toggle("active-mobile");
-        backdrop.classList.toggle("active");
-      }
+    <aside class="sidebar" id="sidebar" aria-label="Portfolio explorer">
+      <div class="sidebar-heading"><span>EXPLORER</span><button class="icon-button sidebar-close" type="button" aria-label="Close Explorer"><i class="codicon codicon-close"></i></button></div>
+      <div class="explorer-section">
+        <button class="explorer-title" type="button" aria-expanded="true"><i class="codicon codicon-chevron-down"></i><span>SOURABH_KUMAR</span></button>
+        <nav class="file-tree" aria-label="Portfolio sections">
+          <button class="file-item active" type="button" data-file="about"><i class="fa-brands fa-html5 file-icon html-icon"></i><span>introduction.html</span></button>
+          <button class="file-item" type="button" data-file="experience"><i class="fa-brands fa-js file-icon js-icon"></i><span>experience.js</span></button>
+          <button class="file-item" type="button" data-file="skills"><i class="fa-brands fa-css3-alt file-icon css-icon"></i><span>skills.css</span></button>
+          <button class="file-item" type="button" data-file="projects"><i class="fa-brands fa-react file-icon react-icon"></i><span>projects.jsx</span></button>
+          <button class="file-item" type="button" data-file="achievements"><i class="codicon codicon-markdown file-icon md-icon"></i><span>achievements.md</span></button>
+          <button class="file-item" type="button" data-file="education"><i class="codicon codicon-code file-icon cpp-icon"></i><span>education.cpp</span></button>
+          <button class="file-item" type="button" data-file="contact"><i class="fa-brands fa-python file-icon py-icon"></i><span>contact.py</span></button>
+        </nav>
+      </div>
+      <div class="outline-panel">
+        <div class="outline-title"><i class="codicon codicon-chevron-right"></i><span>OUTLINE</span></div>
+        <div class="outline-title"><i class="codicon codicon-chevron-right"></i><span>TIMELINE</span></div>
+      </div>
+    </aside>
+    <button class="sidebar-backdrop" type="button" aria-label="Close Explorer"></button>
 
-      // File Navigation Logic
-      function openFile(fileId) {
-        // 1. Hide all code files
-        document
-          .querySelectorAll(".code-file")
-          .forEach((el) => el.classList.remove("active"));
+    <main class="editor">
+      <div class="tabs-bar">
+        <div class="tab active" id="active-tab"><span class="tab-icon"><i class="fa-brands fa-html5 html-icon"></i></span><span id="tab-label">introduction.html</span><i class="codicon codicon-close tab-close" aria-hidden="true"></i></div>
+        <div class="editor-actions" aria-hidden="true"><i class="codicon codicon-split-horizontal"></i><i class="codicon codicon-ellipsis"></i></div>
+      </div>
+      <div class="breadcrumbs"><span>portfolio</span><i class="codicon codicon-chevron-right"></i><span>src</span><i class="codicon codicon-chevron-right"></i><span id="breadcrumb-label">introduction.html</span></div>
 
-        // 2. Remove active class from sidebar items
-        document
-          .querySelectorAll(".file-item")
-          .forEach((el) => el.classList.remove("active"));
+      <div class="editor-content" id="editor-content">
+        <section class="file-panel active" id="panel-about" data-panel="about" aria-labelledby="about-title">
+          <div class="panel-shell intro-layout">
+            <div class="intro-copy">
+              <div class="code-comment">// hello, world</div>
+              <p class="kicker">FULL-STACK &amp; BACKEND DEVELOPER</p>
+              <h1 id="about-title">Hi, I’m <span>Sourabh Kumar.</span></h1>
+              <h2>I build reliable products across web, backend, and AI.</h2>
+              <p class="intro-summary">I’m a developer based in India working across product interfaces, APIs, payments, data-heavy dashboards, and AI-powered document workflows. I enjoy understanding how the pieces fit together and turning complex requirements into software that is clear and useful.</p>
+              <div class="intro-actions">
+                <button class="button primary-button" type="button" data-open-file="experience">View experience <i class="codicon codicon-arrow-right"></i></button>
+                <a class="button secondary-button" href="https://drive.google.com/file/d/1VFTtnr3Cjq6IXYsFYtV_FSOoZ6ITFZD2/view" target="_blank" rel="noreferrer">Open resume <i class="codicon codicon-link-external"></i></a>
+              </div>
+              <div class="social-row" aria-label="Social profiles">
+                <a href="https://linkedin.com/in/sourabh25002" target="_blank" rel="noreferrer"><i class="fa-brands fa-linkedin-in"></i><span>LinkedIn</span></a>
+                <a href="https://github.com/Sourabh25002" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i><span>GitHub</span></a>
+                <a href="https://leetcode.com/u/Sourabh25002/" target="_blank" rel="noreferrer"><i class="fa-solid fa-code"></i><span>LeetCode</span></a>
+                <a href="https://x.com/sky25002" target="_blank" rel="noreferrer"><i class="fa-brands fa-x-twitter"></i><span>X</span></a>
+              </div>
+            </div>
 
-        // 3. Activate selected file and sidebar item
-        document.getElementById("file-" + fileId).classList.add("active");
-        document.getElementById("nav-" + fileId).classList.add("active");
+            <div class="intro-aside">
+              <div class="profile-frame"><img src="./assets/images/profile.png" alt="Portrait of Sourabh Kumar" /><span class="availability-dot" title="Open to opportunities"></span></div>
+              <div class="current-card">
+                <div class="card-label"><span class="status-dot"></span>CURRENTLY</div>
+                <h3>Full-Stack Developer</h3>
+                <a href="https://aumsampann.com/" target="_blank" rel="noreferrer">AUM Capital Market <i class="codicon codicon-link-external"></i></a>
+                <p>Remote · Kolkata, India</p>
+                <div class="current-stack"><span>React.js</span><span>Node.js</span><span>AI workflows</span><span>AWS</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-        // 4. Update Tab Content and Breadcrumb
-        const fileData = {
-          about: { name: "introduction.html", icon: "fab fa-html5 icon-html" },
-          education: {
-            name: "education.cpp",
-            icon: "fab fa-cuttlefish icon-cpp",
-          },
-          experience: { name: "experience.js", icon: "fab fa-js icon-js" },
-          skills: { name: "skills.css", icon: "fab fa-css3-alt icon-css" },
-          projects: { name: "projects.jsx", icon: "fab fa-react icon-react" },
-          achievements: {
-            name: "achievements.md",
-            icon: "fab fa-markdown icon-md",
-          },
-          contact: { name: "contact.py", icon: "fab fa-python icon-py" },
-        };
+        <section class="file-panel" id="panel-experience" data-panel="experience" aria-labelledby="experience-title">
+          <div class="panel-shell">
+            <div class="panel-heading"><div><p class="kicker">EXPERIENCE</p><h2 id="experience-title">Where I’ve contributed.</h2></div><span class="file-language">JavaScript</span></div>
+            <div class="experience-list">
+              <article class="experience-entry">
+                <div class="experience-meta"><span>Feb 2026 — Present</span><small>Remote · India</small></div>
+                <div class="experience-main">
+                  <div class="role-line"><div><h3>Full-Stack Developer</h3><a href="https://aumsampann.com/" target="_blank" rel="noreferrer">AUM Capital Market Pvt. Ltd. <i class="codicon codicon-link-external"></i></a></div><span class="current-badge">Current</span></div>
+                  <ul>
+                    <li>Enhanced portfolio and reporting across 12+ asset classes and 18+ report types, including P&amp;L, XIRR/CAGR, allocation, benchmarks, capital gains, and family-member views.</li>
+                    <li>Integrated NSE payments and bank mandates for mutual-fund transactions supporting ₹50 lakh+ in monthly volume.</li>
+                    <li>Built features for a LangGraph and Gemini multi-agent assistant across in-app chat, AI reports, and WhatsApp.</li>
+                    <li>Implemented RAG and OCR document workflows and extended Cashfree billing across activation, renewals, retries, reconciliation, and entitlements.</li>
+                    <li>Contributed to a portfolio policy checker with 20+ controls, RBAC workflows, and seven internal operations tools.</li>
+                  </ul>
+                  <div class="tag-list"><span>React.js</span><span>Node.js</span><span>Express.js</span><span>MySQL</span><span>ChromaDB</span><span>AWS</span></div>
+                </div>
+              </article>
 
-        const data = fileData[fileId];
-        const tabHtml = `<div class="tab-content">
-                            <i class="${data.icon}" style="margin-right: 8px;"></i> <span>${data.name}</span>
-                         </div>
-                         <i class="fas fa-times tab-close"></i>`;
+              <article class="experience-entry">
+                <div class="experience-meta"><span>Oct 2025 — Jan 2026</span><small>Remote · US team</small></div>
+                <div class="experience-main"><div class="role-line"><div><h3>Software Developer · Freelance</h3><p>KineticAI</p></div></div>
+                  <ul><li>Developed a policy-as-code engine that parses OpenAPI specifications, applies 29 rules, and displays configurable weighted compliance scores.</li><li>Added CI/CD gates for every push and pull request, blocking deployments on critical violations or failed thresholds.</li><li>Validated 1,000+ endpoints across 18 specifications, including Amazon and Adobe, in approximately 13 ms.</li></ul>
+                  <div class="tag-list"><span>Next.js</span><span>Node.js</span><span>Express.js</span><span>OpenAPI</span></div>
+                </div>
+              </article>
 
-        document.getElementById("tab-about").innerHTML = tabHtml;
-        document.getElementById("breadcrumb-file").innerText = data.name;
+              <article class="experience-entry">
+                <div class="experience-meta"><span>Dec 2024 — Sep 2025</span><small>Remote · UK team</small></div>
+                <div class="experience-main"><div class="role-line"><div><h3>Full Stack Developer</h3><p>IT Healthcare Solutions</p></div></div>
+                  <ul><li>Built and shipped a full-stack stock-market platform end to end as the sole developer in five months.</li><li>Created auth, sessions, and a dashboard for 1,900+ LSE companies across 50+ metrics with Finnhub data.</li><li>Delivered search, charts, watchlists, comparisons, recommendations, and real-time Socket.IO updates.</li></ul>
+                  <div class="tag-list"><span>Next.js</span><span>Node.js</span><span>PostgreSQL</span><span>AWS</span><span>Socket.IO</span></div>
+                </div>
+              </article>
 
-        // Auto-close sidebar on mobile after clicking
-        if (window.innerWidth <= 768) {
-          document.getElementById("sidebar").classList.remove("active-mobile");
-        }
-      }
-    </script>
-  </body>
+              <article class="experience-entry">
+                <div class="experience-meta"><span>Apr 2024 — Jun 2024</span><small>Delhi · India</small></div>
+                <div class="experience-main"><div class="role-line"><div><h3>Full-Stack Developer Intern</h3><p>Reachify</p></div></div>
+                  <ul><li>Developed Instagram and Slack webhook pipelines to merge multi-channel messages into a single CRM inbox.</li><li>Built a Google Maps and website lead scraper, cutting processing time roughly 3× to under 20 seconds.</li></ul>
+                  <div class="tag-list"><span>React.js</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>Python</span></div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="file-panel" id="panel-skills" data-panel="skills" aria-labelledby="skills-title">
+          <div class="panel-shell">
+            <div class="panel-heading"><div><p class="kicker">TECHNICAL SKILLS</p><h2 id="skills-title">Tools I use to build.</h2></div><span class="file-language">CSS</span></div>
+            <div class="skills-grid">
+              <article class="skill-card"><div class="skill-number">01</div><i class="codicon codicon-code"></i><h3>Languages</h3><p>JavaScript · TypeScript · Python · C/C++ · SQL</p></article>
+              <article class="skill-card"><div class="skill-number">02</div><i class="codicon codicon-browser"></i><h3>Development</h3><p>HTML · CSS · React.js · Next.js · Node.js · Express.js · PostgreSQL · MongoDB · MySQL</p></article>
+              <article class="skill-card"><div class="skill-number">03</div><i class="codicon codicon-sparkle"></i><h3>AI Engineering</h3><p>Generative AI · LLMs · RAG pipelines · Hugging Face · LangChain · LangGraph · VectorDB · ChromaDB</p></article>
+              <article class="skill-card"><div class="skill-number">04</div><i class="codicon codicon-cloud"></i><h3>Cloud &amp; Tools</h3><p>Docker · Amazon Web Services · CI/CD · Git/GitHub · Inngest · Linux</p></article>
+            </div>
+            <div class="coursework-line"><span>Relevant coursework</span><p>Data Structures &amp; Algorithms · Operating Systems · Computer Networks · OOP · DBMS</p></div>
+          </div>
+        </section>
+
+        <section class="file-panel" id="panel-projects" data-panel="projects" aria-labelledby="projects-title">
+          <div class="panel-shell">
+            <div class="panel-heading"><div><p class="kicker">PROJECTS &amp; RESEARCH</p><h2 id="projects-title">Things I’ve built.</h2></div><span class="file-language">React</span></div>
+            <div class="projects-list">
+              <article class="project-row">
+                <div class="project-index">01</div>
+                <div class="project-body"><div class="project-title-line"><div><p class="project-type">PERSONAL PRODUCT</p><h3>Sky — Visual AI Workflow Automation Builder</h3></div><a class="project-link" href="https://github.com/Sourabh25002/sky" target="_blank" rel="noreferrer" aria-label="Open Sky on GitHub"><i class="fa-brands fa-github"></i><span>Source</span><i class="codicon codicon-link-external"></i></a></div>
+                  <p>Built a secure, subscription-based workflow automation and AI-agent builder with a React Flow canvas and an extensible node library for manual and automated triggers, AI, social, HTTP, and PDF steps.</p>
+                  <ul><li>Implemented Better Auth sessions, Polar billing, Inngest background jobs, and Google Gemini AI steps.</li><li>Used topological sorting to execute connected workflows in the correct order.</li></ul>
+                  <div class="tag-list"><span>GenAI</span><span>React.js</span><span>Node.js</span><span>Express.js</span><span>PostgreSQL</span></div>
+                </div>
+              </article>
+
+              <article class="project-row">
+                <div class="project-index">02</div>
+                <div class="project-body"><div class="project-title-line"><div><p class="project-type">IEEE-PUBLISHED RESEARCH</p><h3>ParkEZ — Automated Smart Parking</h3></div><a class="project-link" href="https://ieeexplore.ieee.org/document/10923435" target="_blank" rel="noreferrer"><span>IEEE Xplore</span><i class="codicon codicon-link-external"></i></a></div>
+                  <p>Developed a smart-parking platform with live availability, online booking, ESP32 sensor synchronization, Google Maps discovery, Twilio OTP access, and Razorpay payments with overtime billing.</p>
+                  <ul><li>Reduced spot-finding time by approximately 15 minutes and congestion by 10%.</li><li>Delivered 30% faster checkout and reduced manual operations.</li></ul>
+                  <div class="project-resources"><a href="https://drive.google.com/file/d/1DgkMBK921I8LkdSbwUsDJzFIB_JGKU3s/view" target="_blank" rel="noreferrer">Read full paper <i class="codicon codicon-link-external"></i></a><a href="https://drive.google.com/file/d/1O6KfSHngB63i_W0J0-SKYNjsLY5CghHT/view" target="_blank" rel="noreferrer">Conference certificate <i class="codicon codicon-link-external"></i></a></div>
+                  <div class="tag-list"><span>React.js</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>ESP32</span></div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="file-panel" id="panel-achievements" data-panel="achievements" aria-labelledby="achievements-title">
+          <div class="panel-shell">
+            <div class="panel-heading"><div><p class="kicker">ACHIEVEMENTS</p><h2 id="achievements-title">Milestones along the way.</h2></div><span class="file-language">Markdown</span></div>
+            <div class="achievement-grid">
+              <article class="achievement-card"><span class="achievement-value">782</span><div><h3>LeetCode Weekly Contest 418</h3><p>Ranked 782 out of 34,628 participants.</p><a href="https://leetcode.com/u/Sourabh25002/" target="_blank" rel="noreferrer">View profile <i class="codicon codicon-link-external"></i></a></div></article>
+              <article class="achievement-card"><span class="achievement-value">500+</span><div><h3>LeetCode Problems</h3><p>40+ contests with a maximum rating of 1650+.</p><a href="https://leetcode.com/u/Sourabh25002/" target="_blank" rel="noreferrer">View profile <i class="codicon codicon-link-external"></i></a></div></article>
+              <article class="achievement-card"><span class="achievement-value">IEEE</span><div><h3>Published Research</h3><p>Presented at the 2nd IEEE International Conference and published in IEEE Xplore.</p><div class="achievement-links"><a href="https://ieeexplore.ieee.org/document/10923435" target="_blank" rel="noreferrer">Publication</a><a href="https://drive.google.com/file/d/1O6KfSHngB63i_W0J0-SKYNjsLY5CghHT/view" target="_blank" rel="noreferrer">Certificate</a></div></div></article>
+              <article class="achievement-card"><span class="achievement-value">527</span><div><h3>TCS CodeVita 11</h3><p>Ranked 527 among 140,000+ participants from 50+ countries.</p><a href="https://drive.google.com/file/d/1yK0V7uWw0-jL6TbuDCIHRvP3yIp_gKNr/view" target="_blank" rel="noreferrer">View certificate <i class="codicon codicon-link-external"></i></a></div></article>
+              <article class="achievement-card"><span class="achievement-value">3rd</span><div><h3>Smart India Hackathon</h3><p>Placed third in the 2023 internal round among 50+ teams.</p></div></article>
+            </div>
+          </div>
+        </section>
+
+        <section class="file-panel" id="panel-education" data-panel="education" aria-labelledby="education-title">
+          <div class="panel-shell">
+            <div class="panel-heading"><div><p class="kicker">EDUCATION</p><h2 id="education-title">Academic foundation.</h2></div><span class="file-language">C++</span></div>
+            <div class="education-list">
+              <article class="education-entry"><div class="education-year">2024</div><div><h3>Bachelor of Technology in Computer Science &amp; Engineering</h3><p>Dr. A. P. J. Abdul Kalam Technical University</p><span>Lucknow, Uttar Pradesh · SGPA 9.3 · June 2024</span></div></article>
+              <article class="education-entry"><div class="education-year">2019</div><div><h3>Higher Secondary Education · 12th Grade</h3><p>Vishnu Bhagwan Public School and College</p><span>Prayagraj, Uttar Pradesh · March 2019</span></div></article>
+              <article class="education-entry"><div class="education-year">2017</div><div><h3>Secondary Education · 10th Grade</h3><p>Vishnu Bhagwan Public School and College</p><span>Prayagraj, Uttar Pradesh · March 2017</span></div></article>
+            </div>
+          </div>
+        </section>
+
+        <section class="file-panel" id="panel-contact" data-panel="contact" aria-labelledby="contact-title">
+          <div class="panel-shell contact-layout">
+            <div class="contact-copy"><div class="code-comment">// available for the right opportunity</div><p class="kicker">CONTACT</p><h2 id="contact-title">Let’s build something useful.</h2><p>I’m open to full-stack, backend, and AI-focused opportunities. If you have a product to build or a role that fits, I’d be glad to talk.</p><a class="button primary-button" href="mailto:sk25002kumar@gmail.com">Send an email <i class="codicon codicon-mail"></i></a></div>
+            <div class="contact-terminal">
+              <div class="terminal-heading"><span><i class="codicon codicon-terminal"></i> contact — bash</span><div><i class="codicon codicon-split-horizontal"></i><i class="codicon codicon-trash"></i></div></div>
+              <div class="terminal-body">
+                <p><span class="prompt">sourabh@portfolio:~$</span> contact --show</p>
+                <dl><div><dt>email</dt><dd><a href="mailto:sk25002kumar@gmail.com">sk25002kumar@gmail.com</a></dd></div><div><dt>phone</dt><dd><a href="tel:+918840331207">+91 88403 31207</a></dd></div><div><dt>location</dt><dd>India · Remote</dd></div><div><dt>linkedin</dt><dd><a href="https://linkedin.com/in/sourabh25002" target="_blank" rel="noreferrer">/in/sourabh25002</a></dd></div><div><dt>github</dt><dd><a href="https://github.com/Sourabh25002" target="_blank" rel="noreferrer">@Sourabh25002</a></dd></div><div><dt>status</dt><dd class="terminal-status">● open to opportunities</dd></div></dl>
+                <p><span class="prompt">sourabh@portfolio:~$</span> <span class="terminal-cursor"></span></p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <footer class="status-bar">
+    <div class="status-left"><span><i class="codicon codicon-source-control"></i> main</span><span><i class="codicon codicon-sync"></i></span><span><i class="codicon codicon-error"></i> 0 &nbsp; <i class="codicon codicon-warning"></i> 0</span></div>
+    <div class="status-right"><span id="status-position">Ln 1, Col 1</span><span>Spaces: 2</span><span>UTF-8</span><span>{ } JavaScript</span><span><i class="codicon codicon-bell"></i></span></div>
+  </footer>
+</body>
 </html>
