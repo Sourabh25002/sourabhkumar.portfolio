@@ -6,6 +6,7 @@
   <meta name="description" content="Portfolio of Sourabh Kumar, a full-stack developer working across web applications, backend systems, and AI workflows." />
   <meta name="theme-color" content="#181818" />
   <title>Sourabh Kumar — Full-Stack Developer</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230078d4'/%3E%3Ctext x='16' y='21.5' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3E%7B%7D%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -19,45 +20,42 @@
 
   <header class="title-bar">
     <div class="title-bar-left">
-      <button class="chrome-button mobile-menu-button" type="button" aria-label="Open portfolio explorer" aria-expanded="false" aria-controls="sidebar">
-        <i class="codicon codicon-menu"></i>
+      <button class="chrome-button mobile-menu-button" type="button" aria-label="Open sections menu" aria-expanded="false" aria-controls="sidebar">
+        <i class="codicon codicon-menu" aria-hidden="true"></i>
       </button>
-      <i class="codicon codicon-vscode vscode-mark" aria-hidden="true"></i>
-      <div class="app-menus" aria-hidden="true"><span>File</span><span>Edit</span><span>Selection</span><span>View</span><span>Go</span><span>Run</span><span>Terminal</span></div>
+      <button class="brand" type="button" data-file="about"><i class="codicon codicon-vscode" aria-hidden="true"></i><span>Sourabh Kumar</span></button>
     </div>
 
-    <div class="command-center" aria-label="Portfolio command center">
-      <div class="history-buttons" aria-hidden="true"><i class="codicon codicon-arrow-left"></i><i class="codicon codicon-arrow-right"></i></div>
-      <button class="command-search" type="button" data-open-file="about">
-        <i class="codicon codicon-search"></i><span>Sourabh Kumar — Portfolio</span>
+    <div class="command-center">
+      <button class="command-search" type="button" data-command-open aria-haspopup="dialog">
+        <i class="codicon codicon-search" aria-hidden="true"></i><span>Search portfolio</span><kbd data-shortcut>Ctrl K</kbd>
       </button>
     </div>
 
-    <div class="title-bar-right" aria-hidden="true">
-      <i class="codicon codicon-layout-sidebar-left"></i><i class="codicon codicon-layout-panel"></i><i class="codicon codicon-layout"></i>
-      <div class="window-controls"><span></span><span></span><span class="window-close"></span></div>
+    <div class="title-bar-right">
+      <a class="title-action" href="https://drive.google.com/file/d/1VFTtnr3Cjq6IXYsFYtV_FSOoZ6ITFZD2/view" target="_blank" rel="noreferrer"><i class="codicon codicon-file-pdf" aria-hidden="true"></i><span>Resume</span></a>
     </div>
   </header>
 
   <div class="workspace">
-    <aside class="activity-bar" aria-label="Workspace tools">
+    <nav class="activity-bar" aria-label="Quick actions">
       <div>
-        <button class="activity-button active" type="button" data-toggle-sidebar aria-label="Toggle Explorer" title="Explorer"><i class="codicon codicon-files"></i></button>
-        <button class="activity-button" type="button" data-open-file="skills" aria-label="Open skills" title="Search skills"><i class="codicon codicon-search"></i></button>
-        <a class="activity-button" href="https://github.com/Sourabh25002" target="_blank" rel="noreferrer" aria-label="GitHub profile" title="Source Control"><i class="codicon codicon-source-control"></i></a>
-        <button class="activity-button" type="button" data-open-file="projects" aria-label="Open projects" title="Run projects"><i class="codicon codicon-run-all"></i></button>
+        <button class="activity-button active" type="button" data-toggle-sidebar aria-controls="sidebar" aria-label="Toggle file explorer" title="Explorer"><i class="codicon codicon-files" aria-hidden="true"></i></button>
+        <button class="activity-button" type="button" data-command-open aria-label="Search portfolio" title="Search"><i class="codicon codicon-search" aria-hidden="true"></i></button>
+        <a class="activity-button" href="https://github.com/Sourabh25002" target="_blank" rel="noreferrer" aria-label="GitHub profile" title="GitHub"><i class="codicon codicon-github" aria-hidden="true"></i></a>
+        <a class="activity-button" href="https://linkedin.com/in/sourabh25002" target="_blank" rel="noreferrer" aria-label="LinkedIn profile" title="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
       </div>
       <div>
-        <button class="activity-button" type="button" data-open-file="contact" aria-label="Open contact" title="Accounts"><i class="codicon codicon-account"></i></button>
-        <a class="activity-button" href="https://drive.google.com/file/d/1VFTtnr3Cjq6IXYsFYtV_FSOoZ6ITFZD2/view" target="_blank" rel="noreferrer" aria-label="Open resume" title="Resume"><i class="codicon codicon-settings-gear"></i></a>
+        <button class="activity-button" type="button" data-file="contact" aria-label="Contact" title="Contact"><i class="codicon codicon-mail" aria-hidden="true"></i></button>
+        <a class="activity-button" href="https://drive.google.com/file/d/1VFTtnr3Cjq6IXYsFYtV_FSOoZ6ITFZD2/view" target="_blank" rel="noreferrer" aria-label="Open resume" title="Resume"><i class="codicon codicon-file-pdf" aria-hidden="true"></i></a>
       </div>
-    </aside>
+    </nav>
 
-    <aside class="sidebar" id="sidebar" aria-label="Portfolio explorer">
-      <div class="sidebar-heading"><span>EXPLORER</span><button class="icon-button sidebar-close" type="button" aria-label="Close Explorer"><i class="codicon codicon-close"></i></button></div>
+    <aside class="sidebar" id="sidebar" aria-label="Portfolio sections">
+      <div class="sidebar-heading"><span>EXPLORER</span><button class="icon-button sidebar-close" type="button" aria-label="Close menu"><i class="codicon codicon-close" aria-hidden="true"></i></button></div>
       <div class="explorer-section">
-        <button class="explorer-title" type="button" aria-expanded="true"><i class="codicon codicon-chevron-down"></i><span>SOURABH_KUMAR</span></button>
-        <nav class="file-tree" aria-label="Portfolio sections">
+        <button class="explorer-title" type="button" aria-expanded="true" aria-controls="file-tree"><i class="codicon codicon-chevron-down" aria-hidden="true"></i><span>SOURABH_KUMAR</span></button>
+        <nav class="file-tree" id="file-tree" aria-label="Sections">
           <button class="file-item active" type="button" data-file="about"><i class="fa-brands fa-html5 file-icon html-icon"></i><span>introduction.html</span></button>
           <button class="file-item" type="button" data-file="experience"><i class="fa-brands fa-js file-icon js-icon"></i><span>experience.js</span></button>
           <button class="file-item" type="button" data-file="skills"><i class="fa-brands fa-css3-alt file-icon css-icon"></i><span>skills.css</span></button>
@@ -67,19 +65,27 @@
           <button class="file-item" type="button" data-file="contact"><i class="fa-brands fa-python file-icon py-icon"></i><span>contact.py</span></button>
         </nav>
       </div>
-      <div class="outline-panel">
-        <div class="outline-title"><i class="codicon codicon-chevron-right"></i><span>OUTLINE</span></div>
-        <div class="outline-title"><i class="codicon codicon-chevron-right"></i><span>TIMELINE</span></div>
+      <div class="sidebar-footer">
+        <p class="availability"><span class="status-dot"></span>Open to opportunities</p>
+        <p>Full-stack, backend, and AI-focused roles.</p>
+        <a class="button primary-button button-small" href="mailto:sk25002kumar@gmail.com"><i class="codicon codicon-mail" aria-hidden="true"></i>Get in touch</a>
       </div>
     </aside>
-    <button class="sidebar-backdrop" type="button" aria-label="Close Explorer"></button>
+    <button class="sidebar-backdrop" type="button" aria-label="Close menu" tabindex="-1"></button>
 
     <main class="editor">
       <div class="tabs-bar">
-        <div class="tab active" id="active-tab"><span class="tab-icon"><i class="fa-brands fa-html5 html-icon"></i></span><span id="tab-label">introduction.html</span><i class="codicon codicon-close tab-close" aria-hidden="true"></i></div>
-        <div class="editor-actions" aria-hidden="true"><i class="codicon codicon-split-horizontal"></i><i class="codicon codicon-ellipsis"></i></div>
+        <nav class="tabs" aria-label="Sections">
+          <button class="tab active" type="button" data-file="about" aria-current="page"><i class="fa-brands fa-html5 html-icon" aria-hidden="true"></i><span>introduction.html</span></button>
+          <button class="tab" type="button" data-file="experience"><i class="fa-brands fa-js js-icon" aria-hidden="true"></i><span>experience.js</span></button>
+          <button class="tab" type="button" data-file="skills"><i class="fa-brands fa-css3-alt css-icon" aria-hidden="true"></i><span>skills.css</span></button>
+          <button class="tab" type="button" data-file="projects"><i class="fa-brands fa-react react-icon" aria-hidden="true"></i><span>projects.jsx</span></button>
+          <button class="tab" type="button" data-file="achievements"><i class="codicon codicon-markdown md-icon" aria-hidden="true"></i><span>achievements.md</span></button>
+          <button class="tab" type="button" data-file="education"><i class="codicon codicon-code cpp-icon" aria-hidden="true"></i><span>education.cpp</span></button>
+          <button class="tab" type="button" data-file="contact"><i class="fa-brands fa-python py-icon" aria-hidden="true"></i><span>contact.py</span></button>
+        </nav>
       </div>
-      <div class="breadcrumbs"><span>portfolio</span><i class="codicon codicon-chevron-right"></i><span>src</span><i class="codicon codicon-chevron-right"></i><span id="breadcrumb-label">introduction.html</span></div>
+      <div class="breadcrumbs" aria-hidden="true"><span>portfolio</span><i class="codicon codicon-chevron-right"></i><span>src</span><i class="codicon codicon-chevron-right"></i><span id="breadcrumb-label">introduction.html</span></div>
 
       <div class="editor-content" id="editor-content">
         <section class="file-panel active" id="panel-about" data-panel="about" aria-labelledby="about-title">
@@ -91,7 +97,7 @@
               <h2>I build reliable products across web, backend, and AI.</h2>
               <p class="intro-summary">I’m a developer based in India working across product interfaces, APIs, payments, data-heavy dashboards, and AI-powered document workflows. I enjoy understanding how the pieces fit together and turning complex requirements into software that is clear and useful.</p>
               <div class="intro-actions">
-                <button class="button primary-button" type="button" data-open-file="experience">View experience <i class="codicon codicon-arrow-right"></i></button>
+                <button class="button primary-button" type="button" data-file="experience">View experience <i class="codicon codicon-arrow-right"></i></button>
                 <a class="button secondary-button" href="https://drive.google.com/file/d/1VFTtnr3Cjq6IXYsFYtV_FSOoZ6ITFZD2/view" target="_blank" rel="noreferrer">Open resume <i class="codicon codicon-link-external"></i></a>
               </div>
               <div class="social-row" aria-label="Social profiles">
@@ -179,8 +185,8 @@
             <div class="panel-heading"><div><p class="kicker">PROJECTS &amp; RESEARCH</p><h2 id="projects-title">Things I’ve built.</h2></div><span class="file-language">React</span></div>
             <div class="projects-list">
               <article class="project-row">
-                <div class="project-index">01</div>
-                <div class="project-body"><div class="project-title-line"><div><p class="project-type">PERSONAL PRODUCT</p><h3>Sky — Visual AI Workflow Automation Builder</h3></div><a class="project-link" href="https://github.com/Sourabh25002/sky" target="_blank" rel="noreferrer" aria-label="Open Sky on GitHub"><i class="fa-brands fa-github"></i><span>Source</span><i class="codicon codicon-link-external"></i></a></div>
+                <div class="project-meta"><span>01</span><small class="project-type">PERSONAL PRODUCT</small></div>
+                <div class="project-body"><div class="project-title-line"><div><h3>Sky — Visual AI Workflow Automation Builder</h3></div><a class="project-link" href="https://github.com/Sourabh25002/sky" target="_blank" rel="noreferrer" aria-label="Open Sky on GitHub"><i class="fa-brands fa-github"></i><span>Source</span><i class="codicon codicon-link-external"></i></a></div>
                   <p>Built a secure, subscription-based workflow automation and AI-agent builder with a React Flow canvas and an extensible node library for manual and automated triggers, AI, social, HTTP, and PDF steps.</p>
                   <ul><li>Implemented Better Auth sessions, Polar billing, Inngest background jobs, and Google Gemini AI steps.</li><li>Used topological sorting to execute connected workflows in the correct order.</li></ul>
                   <div class="tag-list"><span>GenAI</span><span>React.js</span><span>Node.js</span><span>Express.js</span><span>PostgreSQL</span></div>
@@ -188,8 +194,8 @@
               </article>
 
               <article class="project-row">
-                <div class="project-index">02</div>
-                <div class="project-body"><div class="project-title-line"><div><p class="project-type">IEEE-PUBLISHED RESEARCH</p><h3>ParkEZ — Automated Smart Parking</h3></div><a class="project-link" href="https://ieeexplore.ieee.org/document/10923435" target="_blank" rel="noreferrer"><span>IEEE Xplore</span><i class="codicon codicon-link-external"></i></a></div>
+                <div class="project-meta"><span>02</span><small class="project-type">IEEE-PUBLISHED RESEARCH</small></div>
+                <div class="project-body"><div class="project-title-line"><div><h3>ParkEZ — Automated Smart Parking</h3></div><a class="project-link" href="https://ieeexplore.ieee.org/document/10923435" target="_blank" rel="noreferrer"><span>IEEE Xplore</span><i class="codicon codicon-link-external"></i></a></div>
                   <p>Developed a smart-parking platform with live availability, online booking, ESP32 sensor synchronization, Google Maps discovery, Twilio OTP access, and Razorpay payments with overtime billing.</p>
                   <ul><li>Reduced spot-finding time by approximately 15 minutes and congestion by 10%.</li><li>Delivered 30% faster checkout and reduced manual operations.</li></ul>
                   <div class="project-resources"><a href="https://drive.google.com/file/d/1DgkMBK921I8LkdSbwUsDJzFIB_JGKU3s/view" target="_blank" rel="noreferrer">Read full paper <i class="codicon codicon-link-external"></i></a><a href="https://drive.google.com/file/d/1O6KfSHngB63i_W0J0-SKYNjsLY5CghHT/view" target="_blank" rel="noreferrer">Conference certificate <i class="codicon codicon-link-external"></i></a></div>
@@ -241,9 +247,37 @@
     </main>
   </div>
 
-  <footer class="status-bar">
-    <div class="status-left"><span><i class="codicon codicon-source-control"></i> main</span><span><i class="codicon codicon-sync"></i></span><span><i class="codicon codicon-error"></i> 0 &nbsp; <i class="codicon codicon-warning"></i> 0</span></div>
-    <div class="status-right"><span id="status-position">Ln 1, Col 1</span><span>Spaces: 2</span><span>UTF-8</span><span>{ } JavaScript</span><span><i class="codicon codicon-bell"></i></span></div>
+  <footer class="status-bar" aria-hidden="true">
+    <div class="status-left"><span><i class="codicon codicon-source-control"></i> main</span><span class="hide-sm"><i class="codicon codicon-error"></i> 0 <i class="codicon codicon-warning"></i> 0</span></div>
+    <div class="status-right"><span id="status-position" class="hide-sm">Ln 1, Col 1</span><span class="hide-md">Spaces: 2</span><span class="hide-md">UTF-8</span><span id="status-language">HTML</span><span><i class="codicon codicon-bell"></i></span></div>
   </footer>
+
+  <dialog class="palette" id="palette" aria-label="Search portfolio">
+    <div class="palette-input">
+      <i class="codicon codicon-search" aria-hidden="true"></i>
+      <input id="palette-input" type="text" placeholder="Search sections and links…" autocomplete="off" spellcheck="false" aria-label="Search sections and links" />
+    </div>
+    <div class="palette-list">
+      <div class="palette-group">
+        <p class="palette-heading">Sections</p>
+        <button class="palette-item" type="button" data-file="about"><i class="fa-brands fa-html5 html-icon" aria-hidden="true"></i><span class="palette-name">introduction.html</span><span class="palette-desc">About me</span></button>
+        <button class="palette-item" type="button" data-file="experience"><i class="fa-brands fa-js js-icon" aria-hidden="true"></i><span class="palette-name">experience.js</span><span class="palette-desc">Work experience</span></button>
+        <button class="palette-item" type="button" data-file="skills"><i class="fa-brands fa-css3-alt css-icon" aria-hidden="true"></i><span class="palette-name">skills.css</span><span class="palette-desc">Technical skills</span></button>
+        <button class="palette-item" type="button" data-file="projects"><i class="fa-brands fa-react react-icon" aria-hidden="true"></i><span class="palette-name">projects.jsx</span><span class="palette-desc">Projects &amp; research</span></button>
+        <button class="palette-item" type="button" data-file="achievements"><i class="codicon codicon-markdown md-icon" aria-hidden="true"></i><span class="palette-name">achievements.md</span><span class="palette-desc">Achievements</span></button>
+        <button class="palette-item" type="button" data-file="education"><i class="codicon codicon-code cpp-icon" aria-hidden="true"></i><span class="palette-name">education.cpp</span><span class="palette-desc">Education</span></button>
+        <button class="palette-item" type="button" data-file="contact"><i class="fa-brands fa-python py-icon" aria-hidden="true"></i><span class="palette-name">contact.py</span><span class="palette-desc">Contact</span></button>
+      </div>
+      <div class="palette-group">
+        <p class="palette-heading">Links</p>
+        <a class="palette-item" href="https://drive.google.com/file/d/1VFTtnr3Cjq6IXYsFYtV_FSOoZ6ITFZD2/view" target="_blank" rel="noreferrer"><i class="codicon codicon-file-pdf" aria-hidden="true"></i><span class="palette-name">Resume</span><span class="palette-desc">Opens in a new tab</span></a>
+        <a class="palette-item" href="https://github.com/Sourabh25002" target="_blank" rel="noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i><span class="palette-name">GitHub</span><span class="palette-desc">@Sourabh25002</span></a>
+        <a class="palette-item" href="https://linkedin.com/in/sourabh25002" target="_blank" rel="noreferrer"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i><span class="palette-name">LinkedIn</span><span class="palette-desc">/in/sourabh25002</span></a>
+        <a class="palette-item" href="mailto:sk25002kumar@gmail.com"><i class="codicon codicon-mail" aria-hidden="true"></i><span class="palette-name">Email</span><span class="palette-desc">sk25002kumar@gmail.com</span></a>
+      </div>
+      <p class="palette-empty" hidden>No matches. Try “projects” or “resume”.</p>
+    </div>
+    <div class="palette-footer" aria-hidden="true"><span><kbd>↑</kbd><kbd>↓</kbd> move</span><span><kbd>Enter</kbd> open</span><span><kbd>Esc</kbd> close</span></div>
+  </dialog>
 </body>
 </html>
